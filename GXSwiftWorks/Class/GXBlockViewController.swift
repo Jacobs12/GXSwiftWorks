@@ -17,7 +17,6 @@ class GXBlockViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.orange;
-        self.start();
     }
     
 
@@ -37,5 +36,11 @@ class GXBlockViewController: UIViewController {
                 self.callBack!("100","200");
             }
         });
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if(self.callBack != nil){
+            self.callBack!("200","300");
+        }
     }
 }
