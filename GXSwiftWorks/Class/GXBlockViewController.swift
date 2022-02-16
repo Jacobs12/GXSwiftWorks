@@ -17,9 +17,12 @@ class GXBlockViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.orange;
+        self.start(duration: 3) { str1, str2 in
+            NSLog("%@ %@", str1,str2);
+        };
     }
     
-
+    
     /*
     // MARK: - Navigation
 
@@ -30,11 +33,9 @@ class GXBlockViewController: UIViewController {
     }
     */
     
-    func start() -> Void{
+    func start(duration:Int, completion:@escaping((NSString,NSString) -> Void)) -> Void{
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
-            if((self.callBack) != nil){
-                self.callBack!("100","200");
-            }
+            completion("800","900");
         });
     }
     

@@ -16,7 +16,7 @@ class ViewController: UIViewController ,UITableViewDataSource,UITableViewDelegat
             if(_dataArray == nil){
                 _dataArray = NSMutableArray.init();
                 let array = [
-                    "闭包"
+                    "闭包","setter和getter"
                 ];
                 _dataArray?.addObjects(from: array);
             }
@@ -64,13 +64,22 @@ class ViewController: UIViewController ,UITableViewDataSource,UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if(indexPath.row == 0){
+        switch indexPath.row {
+        case 0:
             let vc:GXBlockViewController? = GXBlockViewController.init();
 //            闭包的使用
             vc?.callBack = { str1,str2 in
                 NSLog("闭包回调传值:%@ %@", str1,str2);
             }
             self.navigationController?.pushViewController(vc!, animated: true);
+            break;
+        case 1:
+            let vc:GXSetterViewController? = GXSetterViewController.init();
+            self.navigationController?.pushViewController(vc!, animated: true);
+            break;
+        default:
+           
+            break;
         }
     }
 }
