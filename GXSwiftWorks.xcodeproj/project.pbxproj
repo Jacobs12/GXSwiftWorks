@@ -23,6 +23,7 @@
 		84B4AC0F27BE23DB00EA6723 /* GXNetWorking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4AC0E27BE23DB00EA6723 /* GXNetWorking.swift */; };
 		84B4AC1127BE23EB00EA6723 /* GXSessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4AC1027BE23EB00EA6723 /* GXSessionRequest.swift */; };
 		84B4AC1327BE243C00EA6723 /* GXColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4AC1227BE243C00EA6723 /* GXColor.swift */; };
+		84B4AC1527BE295300EA6723 /* GXDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4AC1427BE295300EA6723 /* GXDevice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		84B4AC0E27BE23DB00EA6723 /* GXNetWorking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXNetWorking.swift; sourceTree = "<group>"; };
 		84B4AC1027BE23EB00EA6723 /* GXSessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXSessionRequest.swift; sourceTree = "<group>"; };
 		84B4AC1227BE243C00EA6723 /* GXColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXColor.swift; sourceTree = "<group>"; };
+		84B4AC1427BE295300EA6723 /* GXDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXDevice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 			children = (
 				84B4AC0B27BE235400EA6723 /* GXUtils.swift */,
 				84B4AC1227BE243C00EA6723 /* GXColor.swift */,
+				84B4AC1427BE295300EA6723 /* GXDevice.swift */,
 				84B4AC0D27BE23C000EA6723 /* Networking */,
 			);
 			path = Tools;
@@ -303,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B4AC1527BE295300EA6723 /* GXDevice.swift in Sources */,
 				84B4AC0727BDF04600EA6723 /* GXSingleCaseManager.swift in Sources */,
 				84648C7527B3CB060082BE8E /* ViewController.swift in Sources */,
 				84648C7127B3CB060082BE8E /* AppDelegate.swift in Sources */,
