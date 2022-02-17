@@ -25,8 +25,27 @@ class GXDevice: NSObject {
     }
 
     class func isPhoneX() -> Bool{
-        var result = GXDevice.isHaveSafeArea();
+        let result = GXDevice.isHaveSafeArea();
         return result;
     }
     
+    class func screenHeight() -> CGFloat{
+        let width = UIScreen.main.bounds.size.width;
+        let height = UIScreen.main.bounds.size.height;
+        let result = max(width, height);
+        return result;
+    }
+    
+    class func screenWidth() -> CGFloat{
+        let width = UIScreen.main.bounds.size.width;
+        let height = UIScreen.main.bounds.size.height;
+        let result = min(width, height);
+        return result;
+    }
+    
+    class func screenScale() -> CGFloat{
+        let width = GXDevice.screenWidth();
+        let result = width / 375.0;
+        return result;
+    }
 }
