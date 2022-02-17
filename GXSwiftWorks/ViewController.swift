@@ -16,7 +16,7 @@ class ViewController: UIViewController ,UITableViewDataSource,UITableViewDelegat
             if(_dataArray == nil){
                 _dataArray = NSMutableArray.init();
                 let array = [
-                    "闭包","setter和getter"
+                    "闭包","setter和getter","单例数值每次+1，Log输出"
                 ];
                 _dataArray?.addObjects(from: array);
             }
@@ -76,6 +76,12 @@ class ViewController: UIViewController ,UITableViewDataSource,UITableViewDelegat
         case 1:
             let vc:GXSetterViewController? = GXSetterViewController.init();
             self.navigationController?.pushViewController(vc!, animated: true);
+            break;
+        case 2:
+            let dog:GXSingleCaseManager? = GXSingleCaseManager.defaultManager();
+            dog!.add(1, options: [:], completion: { str1, str2 in
+                
+            });
             break;
         default:
            
