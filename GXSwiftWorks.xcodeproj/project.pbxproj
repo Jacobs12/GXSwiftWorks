@@ -19,7 +19,10 @@
 		84648C9427B3CB080082BE8E /* GXSwiftWorksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84648C9327B3CB080082BE8E /* GXSwiftWorksUITestsLaunchTests.swift */; };
 		84648CA227B3CB3C0082BE8E /* GXBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84648CA127B3CB3C0082BE8E /* GXBlockViewController.swift */; };
 		84B4AC0727BDF04600EA6723 /* GXSingleCaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4AC0627BDF04600EA6723 /* GXSingleCaseManager.swift */; };
-		84B4AC0A27BE22CA00EA6723 /* GXTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4AC0927BE22CA00EA6723 /* GXTools.swift */; };
+		84B4AC0C27BE235400EA6723 /* GXUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4AC0B27BE235400EA6723 /* GXUtils.swift */; };
+		84B4AC0F27BE23DB00EA6723 /* GXNetWorking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4AC0E27BE23DB00EA6723 /* GXNetWorking.swift */; };
+		84B4AC1127BE23EB00EA6723 /* GXSessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4AC1027BE23EB00EA6723 /* GXSessionRequest.swift */; };
+		84B4AC1327BE243C00EA6723 /* GXColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4AC1227BE243C00EA6723 /* GXColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +59,10 @@
 		84648C9327B3CB080082BE8E /* GXSwiftWorksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXSwiftWorksUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		84648CA127B3CB3C0082BE8E /* GXBlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXBlockViewController.swift; sourceTree = "<group>"; };
 		84B4AC0627BDF04600EA6723 /* GXSingleCaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXSingleCaseManager.swift; sourceTree = "<group>"; };
-		84B4AC0927BE22CA00EA6723 /* GXTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXTools.swift; sourceTree = "<group>"; };
+		84B4AC0B27BE235400EA6723 /* GXUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXUtils.swift; sourceTree = "<group>"; };
+		84B4AC0E27BE23DB00EA6723 /* GXNetWorking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXNetWorking.swift; sourceTree = "<group>"; };
+		84B4AC1027BE23EB00EA6723 /* GXSessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXSessionRequest.swift; sourceTree = "<group>"; };
+		84B4AC1227BE243C00EA6723 /* GXColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,9 +156,20 @@
 		84B4AC0827BE22B400EA6723 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				84B4AC0927BE22CA00EA6723 /* GXTools.swift */,
+				84B4AC0B27BE235400EA6723 /* GXUtils.swift */,
+				84B4AC1227BE243C00EA6723 /* GXColor.swift */,
+				84B4AC0D27BE23C000EA6723 /* Networking */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		84B4AC0D27BE23C000EA6723 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				84B4AC0E27BE23DB00EA6723 /* GXNetWorking.swift */,
+				84B4AC1027BE23EB00EA6723 /* GXSessionRequest.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,12 +303,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84B4AC0A27BE22CA00EA6723 /* GXTools.swift in Sources */,
 				84B4AC0727BDF04600EA6723 /* GXSingleCaseManager.swift in Sources */,
 				84648C7527B3CB060082BE8E /* ViewController.swift in Sources */,
 				84648C7127B3CB060082BE8E /* AppDelegate.swift in Sources */,
+				84B4AC0C27BE235400EA6723 /* GXUtils.swift in Sources */,
+				84B4AC1127BE23EB00EA6723 /* GXSessionRequest.swift in Sources */,
+				84B4AC0F27BE23DB00EA6723 /* GXNetWorking.swift in Sources */,
 				84648C7327B3CB060082BE8E /* SceneDelegate.swift in Sources */,
 				84648CA227B3CB3C0082BE8E /* GXBlockViewController.swift in Sources */,
+				84B4AC1327BE243C00EA6723 /* GXColor.swift in Sources */,
 				842FF5D427B4E88A00C0BD73 /* GXSetterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
