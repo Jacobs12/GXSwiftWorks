@@ -9,18 +9,26 @@ import UIKit
 
 class GXDevice: NSObject {
     
+//    MARK: window
+    
     class func mainWindow() -> UIWindow{
         let window:UIWindow? = (UIApplication.shared.delegate?.window)!;
         return window!;
     }
     
+//    MARK: 机型判断
+    
     class func isHaveSafeArea() -> Bool{
         var result = false;
         let window:UIWindow? = GXDevice.mainWindow();
-        let bottom = (window?.safeAreaInsets.bottom)!;
-        if(bottom > 0.1){
-            result = true;
-        }
+        if #available(iOS 11.0, *) {
+            let bottom = (window?.safeAreaInsets.bottom)!
+            if(bottom > 0.1){
+                result = true;
+            }
+        } else {
+            // Fallback on earlier versions
+        };
         return result;
     }
 
@@ -28,6 +36,8 @@ class GXDevice: NSObject {
         let result = GXDevice.isHaveSafeArea();
         return result;
     }
+    
+//    MARK: 屏幕宽高
     
     class func screenHeight() -> CGFloat{
         let width = UIScreen.main.bounds.size.width;
