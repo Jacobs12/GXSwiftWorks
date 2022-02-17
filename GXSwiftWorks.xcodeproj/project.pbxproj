@@ -19,6 +19,7 @@
 		84648C9427B3CB080082BE8E /* GXSwiftWorksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84648C9327B3CB080082BE8E /* GXSwiftWorksUITestsLaunchTests.swift */; };
 		84648CA227B3CB3C0082BE8E /* GXBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84648CA127B3CB3C0082BE8E /* GXBlockViewController.swift */; };
 		84B4AC0727BDF04600EA6723 /* GXSingleCaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4AC0627BDF04600EA6723 /* GXSingleCaseManager.swift */; };
+		84B4AC0A27BE22CA00EA6723 /* GXTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4AC0927BE22CA00EA6723 /* GXTools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		84648C9327B3CB080082BE8E /* GXSwiftWorksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXSwiftWorksUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		84648CA127B3CB3C0082BE8E /* GXBlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXBlockViewController.swift; sourceTree = "<group>"; };
 		84B4AC0627BDF04600EA6723 /* GXSingleCaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXSingleCaseManager.swift; sourceTree = "<group>"; };
+		84B4AC0927BE22CA00EA6723 /* GXTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXTools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		84648C6F27B3CB060082BE8E /* GXSwiftWorks */ = {
 			isa = PBXGroup;
 			children = (
+				84B4AC0827BE22B400EA6723 /* Tools */,
 				84648CA027B3CB0F0082BE8E /* Class */,
 				84648C7027B3CB060082BE8E /* AppDelegate.swift */,
 				84648C7227B3CB060082BE8E /* SceneDelegate.swift */,
@@ -142,6 +145,14 @@
 				84B4AC0627BDF04600EA6723 /* GXSingleCaseManager.swift */,
 			);
 			path = Class;
+			sourceTree = "<group>";
+		};
+		84B4AC0827BE22B400EA6723 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				84B4AC0927BE22CA00EA6723 /* GXTools.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B4AC0A27BE22CA00EA6723 /* GXTools.swift in Sources */,
 				84B4AC0727BDF04600EA6723 /* GXSingleCaseManager.swift in Sources */,
 				84648C7527B3CB060082BE8E /* ViewController.swift in Sources */,
 				84648C7127B3CB060082BE8E /* AppDelegate.swift in Sources */,
