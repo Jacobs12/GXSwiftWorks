@@ -23,6 +23,7 @@
 		84B4AC1127BE23EB00EA6723 /* GXSessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4AC1027BE23EB00EA6723 /* GXSessionRequest.swift */; };
 		84B4AC1327BE243C00EA6723 /* GXColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4AC1227BE243C00EA6723 /* GXColor.swift */; };
 		84B4AC1527BE295300EA6723 /* GXDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4AC1427BE295300EA6723 /* GXDevice.swift */; };
+		C10788DEDC4F9EE3A52B204A /* libPods-GXSwiftWorks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68DFB3940C38149EB1EAEBDE /* libPods-GXSwiftWorks.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		68DFB3940C38149EB1EAEBDE /* libPods-GXSwiftWorks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GXSwiftWorks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		842FF5D327B4E88A00C0BD73 /* GXSetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXSetterViewController.swift; sourceTree = "<group>"; };
 		84648C6D27B3CB060082BE8E /* GXSwiftWorks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GXSwiftWorks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84648C7027B3CB060082BE8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,8 @@
 		84B4AC1027BE23EB00EA6723 /* GXSessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXSessionRequest.swift; sourceTree = "<group>"; };
 		84B4AC1227BE243C00EA6723 /* GXColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXColor.swift; sourceTree = "<group>"; };
 		84B4AC1427BE295300EA6723 /* GXDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXDevice.swift; sourceTree = "<group>"; };
+		B58FBC9DFB80765D872A2F8B /* Pods-GXSwiftWorks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GXSwiftWorks.debug.xcconfig"; path = "Target Support Files/Pods-GXSwiftWorks/Pods-GXSwiftWorks.debug.xcconfig"; sourceTree = "<group>"; };
+		F0FCE7BE9F548F19CEEE3FA8 /* Pods-GXSwiftWorks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GXSwiftWorks.release.xcconfig"; path = "Target Support Files/Pods-GXSwiftWorks/Pods-GXSwiftWorks.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C10788DEDC4F9EE3A52B204A /* libPods-GXSwiftWorks.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D6037BA446E2E3D3DE80A3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68DFB3940C38149EB1EAEBDE /* libPods-GXSwiftWorks.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		84648C6427B3CB060082BE8E = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +110,8 @@
 				84648C8627B3CB080082BE8E /* GXSwiftWorksTests */,
 				84648C9027B3CB080082BE8E /* GXSwiftWorksUITests */,
 				84648C6E27B3CB060082BE8E /* Products */,
+				E890C415EFF1216FB592D66F /* Pods */,
+				5D6037BA446E2E3D3DE80A3A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,6 +187,16 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		E890C415EFF1216FB592D66F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B58FBC9DFB80765D872A2F8B /* Pods-GXSwiftWorks.debug.xcconfig */,
+				F0FCE7BE9F548F19CEEE3FA8 /* Pods-GXSwiftWorks.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -179,6 +204,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84648C9727B3CB080082BE8E /* Build configuration list for PBXNativeTarget "GXSwiftWorks" */;
 			buildPhases = (
+				084AAB27A674CD6419B5585C /* [CP] Check Pods Manifest.lock */,
 				84648C6927B3CB060082BE8E /* Sources */,
 				84648C6A27B3CB060082BE8E /* Frameworks */,
 				84648C6B27B3CB060082BE8E /* Resources */,
@@ -297,6 +323,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		084AAB27A674CD6419B5585C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GXSwiftWorks-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84648C6927B3CB060082BE8E /* Sources */ = {
@@ -486,6 +537,7 @@
 		};
 		84648C9827B3CB080082BE8E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B58FBC9DFB80765D872A2F8B /* Pods-GXSwiftWorks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -515,6 +567,7 @@
 		};
 		84648C9927B3CB080082BE8E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0FCE7BE9F548F19CEEE3FA8 /* Pods-GXSwiftWorks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
