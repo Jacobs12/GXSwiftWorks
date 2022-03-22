@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController ,UITableViewDataSource,UITableViewDelegate{
+class ViewController: UIViewController ,UITableViewDataSource,UITableViewDelegate,GXProtocolDelegate{
     
 //   MARK: property
     private var _dataArray:NSMutableArray?;
@@ -83,10 +83,23 @@ class ViewController: UIViewController ,UITableViewDataSource,UITableViewDelegat
                 
             });
             break;
+        case 3:
+            let vc:GXClassFunctionViewController? = GXClassFunctionViewController.init();
+            self.navigationController?.pushViewController(vc!, animated: true);
+            break;
+        case 4:
+            let vc:GXProtocolViewController? = GXProtocolViewController.init();
+            vc?.delegate = self;
+            self.navigationController?.pushViewController(vc!, animated: true);
+            break;
         default:
            
             break;
         }
+    }
+    
+    func callBack(value1: String, value2: String) {
+        NSLog("%@  %@", value1,value2);
     }
 }
 
