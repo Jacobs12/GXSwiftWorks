@@ -16,7 +16,7 @@ class ViewController: UIViewController ,UITableViewDataSource,UITableViewDelegat
             if(_dataArray == nil){
                 _dataArray = NSMutableArray.init();
                 let array = [
-                    "闭包","setter和getter","单例数值每次+1，Log输出"
+                    "闭包","setter和getter","单例数值每次+1，Log输出","类方法","delegate","AFNetworking"
                 ];
                 _dataArray?.addObjects(from: array);
             }
