@@ -7,6 +7,13 @@
 
 import UIKit
 
+enum GXRequestMode{
+    case GXRequestModeGet
+    case GXRequestModePost
+    case GXRequestModePut
+    case GXRequestModeDelete
+};
+
 class GXSessionRequest: NSObject {
 
 }
