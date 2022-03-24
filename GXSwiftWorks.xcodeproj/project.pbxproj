@@ -65,6 +65,7 @@
 		84648C9127B3CB080082BE8E /* GXSwiftWorksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXSwiftWorksUITests.swift; sourceTree = "<group>"; };
 		84648C9327B3CB080082BE8E /* GXSwiftWorksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXSwiftWorksUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		84648CA127B3CB3C0082BE8E /* GXBlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXBlockViewController.swift; sourceTree = "<group>"; };
+		848B4B5C27EC161D005E0B8C /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
 		84B4AC0627BDF04600EA6723 /* GXSingleCaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXSingleCaseManager.swift; sourceTree = "<group>"; };
 		84B4AC0B27BE235400EA6723 /* GXUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXUtils.swift; sourceTree = "<group>"; };
 		84B4AC0E27BE23DB00EA6723 /* GXNetWorking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXNetWorking.swift; sourceTree = "<group>"; };
@@ -192,6 +193,7 @@
 			children = (
 				84B4AC0E27BE23DB00EA6723 /* GXNetWorking.swift */,
 				84B4AC1027BE23EB00EA6723 /* GXSessionRequest.swift */,
+				848B4B5C27EC161D005E0B8C /* Bridge-Header.h */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -571,6 +573,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yiben.comic.GXSwiftWorks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "GXSwiftWorks/Tools/Networking/Bridge-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -601,6 +604,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yiben.comic.GXSwiftWorks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "GXSwiftWorks/Tools/Networking/Bridge-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
