@@ -92,6 +92,10 @@ class ViewController: UIViewController ,UITableViewDataSource,UITableViewDelegat
             vc?.delegate = self;
             self.navigationController?.pushViewController(vc!, animated: true);
             break;
+        case 5:
+            let vc:GXNetworkingViewController = GXNetworkingViewController.init();
+            self.navigationController?.pushViewController(vc, animated: true);
+            break;
         default:
            
             break;

@@ -33,6 +33,7 @@ class GXNetworkingViewController: UIViewController {
     }
     
     func createView() -> Void{
-        
+        self.view.addSubview(self.textView);
+        self.textView.text = "哈哈";
     }
 }

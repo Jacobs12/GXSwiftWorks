@@ -37,6 +37,7 @@ class GXProtocolViewController: UIViewController {
         self.view.addSubview(self.button)
     }
     
+//    @objc 可以给objective使用的类方法
     @objc func buttonClick(_ sender:Any) ->Void{
         if(self.delegate != nil){
             self.delegate?.callBack(value1: "1", value2: "2");
