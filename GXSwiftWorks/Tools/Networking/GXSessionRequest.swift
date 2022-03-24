@@ -17,8 +17,18 @@ enum GXRequestMode{
 
 class GXSessionRequest: NSObject {
     
+//    MARK: getters
+    func dataTask(with request:NSMutableURLRequest ,completionHandler:((URLResponse,Any,Error)->Void)) -> URLSessionDataTask{
+        var response:URLResponse;
+        
+        var manager:AFHTTPSessionManager = GXNetworkingBridge.init().manager();
+        
+        let dataTask:URLSessionDataTask?;
+        return dataTask!;
+    }
+    
     func string(withRequest mode:GXRequestMode) -> String{
-        var result:String? = "Get";
+        var result:String? = "GET";
         switch mode{
         case .Get:
             result = "GET";
