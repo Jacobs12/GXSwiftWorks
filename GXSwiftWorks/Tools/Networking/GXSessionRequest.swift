@@ -21,8 +21,11 @@ class GXSessionRequest: NSObject {
     func dataTask(with request:NSMutableURLRequest ,completionHandler:((URLResponse,Any,Error)->Void)) -> URLSessionDataTask{
         var response:URLResponse;
         
-        var manager:AFHTTPSessionManager = GXNetworkingBridge.init().manager();
-        
+        let bridge:GXNetworkingBridge = GXNetworkingBridge.init()
+        var manager:AFHTTPSessionManager = bridge.manager();
+        let acceptableContentTypes:Set = ["text/html","text/plain"];
+        manager.responseSerializer.acceptableContentTypes = acceptableContentTypes;
+        manager.responseSerializer = AFHTTPResponseSerializer
         let dataTask:URLSessionDataTask?;
         return dataTask!;
     }
