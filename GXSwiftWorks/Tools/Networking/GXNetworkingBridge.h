@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (AFHTTPSessionManager *)manager;
 
+- (AFHTTPResponseSerializer *)responseSerializer;
+
 @end
 
 NS_ASSUME_NONNULL_END

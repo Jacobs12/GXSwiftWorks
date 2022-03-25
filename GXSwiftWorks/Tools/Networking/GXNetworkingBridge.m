@@ -14,4 +14,10 @@
     return manager;
 }
 
+- (AFHTTPResponseSerializer *)responseSerializer{
+    AFHTTPResponseSerializer * serializer = [AFHTTPResponseSerializer serializer];
+    return serializer;
+
+}
+
 @end
