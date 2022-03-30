@@ -30,6 +30,14 @@ class GXNetworkingViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.createView();
+        let host = "https://app.yibenmanhua.com";
+        let query:Dictionary<String,Any>? = [:];
+        let headers:Dictionary<String,Any>? = [:];
+        let parameters:Dictionary<String,Any>? = [:];
+        GXNetWorking.get(host: host, query: query, headers: headers, parameters: parameters) { data, response, error in
+            let string:String? = String.init(data: data!, encoding: .utf8);
+            print(string as Any);
+        };
     }
     
     func createView() -> Void{

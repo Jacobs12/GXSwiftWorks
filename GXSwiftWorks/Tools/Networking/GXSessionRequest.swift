@@ -34,20 +34,23 @@ class GXSessionRequest: NSObject {
 //        return dataTask!;
 //    }
     
-    func dataTask(host:String,mode:GXRequestMode,query:Dictionary<String, Any>,headers:Dictionary<String, Any>,parameters:Dictionary<String, Any>,completionHandler:(@escaping (Data,URLResponse,Error)->Void)) -> URLSessionDataTask{
+    func dataTask(host:String,mode:GXRequestMode,query:Dictionary<String, Any>?,headers:Dictionary<String, Any>?,parameters:Dictionary<String, Any>?,completionHandler:(@escaping (Data?,URLResponse?,Error?)->Void)) -> URLSessionDataTask?{
+        if(host.isEmpty){
+            return nil;
+        }
         let url:URL? = URL(string: host);
         var request:URLRequest? = URLRequest(url: url!);
         request?.httpMethod = self.string(mode: mode);
         let dataTask:URLSessionDataTask? = self.dataTask(request: request!) { responseData, response, error in
-            
+            completionHandler(responseData,response,error);
         };
         return dataTask!;
     }
     
-    func dataTask(request:URLRequest,completionHandler:(@escaping (Data,URLResponse,Error)->Void)) -> URLSessionDataTask{
+    func dataTask(request:URLRequest,completionHandler:(@escaping (Data?,URLResponse?,Error?)->Void)) -> URLSessionDataTask?{
         let session:URLSession? = URLSession.shared;
         self.dataTask = session?.dataTask(with: request, completionHandler: { responseData, response, error in
-            completionHandler(responseData!,response!,error!);
+            completionHandler(responseData,response,error);
         });
         self.dataTask?.resume();
         return self.dataTask!;
@@ -84,7 +87,7 @@ class GXSessionRequest: NSObject {
     ///   - parameters: body
     ///   - completionHandler: 请求完成回调
     /// - Returns: 请求任务实例
-    func get(host:String,query:Dictionary<String, Any>,headers:Dictionary<String, Any>,parameters:Dictionary<String, Any>,completionHandler:(@escaping (Data,URLResponse,Error)->Void)) -> URLSessionDataTask{
+    func get(host:String,query:Dictionary<String, Any>?,headers:Dictionary<String, Any>?,parameters:Dictionary<String, Any>?,completionHandler:(@escaping (Data?,URLResponse?,Error?)->Void)) -> URLSessionDataTask?{
         let dataTask:URLSessionDataTask? = self.dataTask(host: host, mode: .Get, query: query, headers: headers, parameters: parameters) { responseData, response, error in
             completionHandler(responseData,response,error);
         }
