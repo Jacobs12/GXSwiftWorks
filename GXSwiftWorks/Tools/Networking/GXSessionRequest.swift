@@ -17,17 +17,30 @@ enum GXRequestMode{
 
 class GXSessionRequest: NSObject {
     
+    var dataTask:URLSessionDataTask?;
+    
 //    MARK: getters
-    func dataTask(with request:NSMutableURLRequest ,completionHandler:((URLResponse,Any,Error)->Void)) -> URLSessionDataTask{
-        var response:URLResponse;
-        
-        let bridge:GXNetworkingBridge = GXNetworkingBridge.init()
-        var manager:AFHTTPSessionManager = bridge.manager();
-        let acceptableContentTypes:Set = ["text/html","text/plain"];
-        manager.responseSerializer.acceptableContentTypes = acceptableContentTypes;
-        manager.responseSerializer = AFHTTPResponseSerializer
-        let dataTask:URLSessionDataTask?;
-        return dataTask!;
+//    func dataTask(with request:NSMutableURLRequest ,completionHandler:((URLResponse,Any,Error)->Void)) -> URLSessionDataTask{
+//        var response:URLResponse;
+//
+//        let bridge:GXNetworkingBridge = GXNetworkingBridge.init()
+    
+//        var manager:AFHTTPSessionManager = bridge.manager();
+//        let acceptableContentTypes:Set = ["text/html","text/plain"];
+//        manager.responseSerializer.acceptableContentTypes = acceptableContentTypes;
+//        manager.responseSerializer = bridge.responseSerializer();
+//        let dataTask:URLSessionDataTask?;
+    
+//        return dataTask!;
+//    }
+    
+    func dataTask(with request:URLRequest ,completionHandler:((Data,URLResponse,Error)->Void)) -> URLSessionDataTask{
+        let session:URLSession? = URLSession.shared;
+        self.dataTask = session?.dataTask(with: request, completionHandler: { responseData, response, error in
+            
+        });
+        self.dataTask?.resume();
+        return self.dataTask!;
     }
     
     func string(withRequest mode:GXRequestMode) -> String{
