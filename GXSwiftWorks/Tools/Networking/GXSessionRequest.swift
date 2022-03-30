@@ -34,7 +34,11 @@ class GXSessionRequest: NSObject {
 //        return dataTask!;
 //    }
     
-    func dataTask(with request:URLRequest ,completionHandler:(@escaping (Data,URLResponse,Error)->Void)) -> URLSessionDataTask{
+    func dataTask(with url:String mode:GXRequestMode ,query:Dictionary<String, Any> ,headers:Dictionary<String, Any>,parameters:Dictionary<String, Any>,completionHandler:(@escaping (Data,URLResponse,Error)->Void)) -> URLSessionDataTask{
+        var request
+    }
+    
+    func dataTask(with request:URLRequest,completionHandler:(@escaping (Data,URLResponse,Error)->Void)) -> URLSessionDataTask{
         let session:URLSession? = URLSession.shared;
         self.dataTask = session?.dataTask(with: request, completionHandler: { responseData, response, error in
             completionHandler(responseData!,response!,error!);
