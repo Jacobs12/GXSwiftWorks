@@ -64,6 +64,22 @@ class GXSessionRequest: NSObject {
                 request?.addValue(value as! String, forHTTPHeaderField: key);
             }
         }
+//        设置body
+        if(parameters?.isEmpty == false){
+            let parameter2:Dictionary! = parameters;
+            var body:String = "";
+            var index = 0;
+            for (key,value) in parameter2{
+                if(index != 0){
+                    body.append("&");
+                }
+                var object = String(format: "%@=%@", key,value as! String);
+                body.append(object);
+                index = index + 1;
+            }
+            let data = body.data(using: .utf8);
+            request?.httpBody = data;
+        }
         let dataTask:URLSessionDataTask? = self.dataTask(request: request!) { responseData, response, error in
             completionHandler(responseData,response,error);
         };
@@ -110,8 +126,16 @@ class GXSessionRequest: NSObject {
     ///   - parameters: body
     ///   - completionHandler: 请求完成回调
     /// - Returns: 请求任务实例
-    func get(host:String,query:Dictionary<String, Any>?,headers:Dictionary<String, Any>?,parameters:Dictionary<String, Any>?,completionHandler:(@escaping (Data?,URLResponse?,Error?)->Void)) -> URLSessionDataTask?{
+    func get(host:String,query:Dictionary<String, Any>?,headers:Dictionary<String, Any>?,completionHandler:(@escaping (Data?,URLResponse?,Error?)->Void)) -> URLSessionDataTask?{
+        let parameters:Dictionary<String,Any>? = [:];
         let dataTask:URLSessionDataTask? = self.dataTask(host: host, mode: .Get, query: query, headers: headers, parameters: parameters) { responseData, response, error in
+            completionHandler(responseData,response,error);
+        }
+        return dataTask!;
+    }
+    
+    func post(host:String,query:Dictionary<String, Any>?,headers:Dictionary<String, Any>?,parameters:Dictionary<String, Any>?,completionHandler:(@escaping (Data?,URLResponse?,Error?)->Void)) -> URLSessionDataTask?{
+        let dataTask:URLSessionDataTask? = self.dataTask(host: host, mode: .Post, query: query, headers: headers, parameters: parameters) { responseData, response, error in
             completionHandler(responseData,response,error);
         }
         return dataTask!;

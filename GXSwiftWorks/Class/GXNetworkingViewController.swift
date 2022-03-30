@@ -33,8 +33,12 @@ class GXNetworkingViewController: UIViewController {
         let host = "https://app.yibenmanhua.com";
         let query:Dictionary<String,Any>? = ["kk":"vvv"];
         let headers:Dictionary<String,Any>? = ["aaa":"bbb"];
-        let parameters:Dictionary<String,Any>? = [:];
-        GXNetWorking.get(host: host, query: query, headers: headers, parameters: parameters) { data, response, error in
+        let parameters:Dictionary<String,Any>? = ["ppp":"qqq"];
+//        GXNetWorking.get(host: host, query: query, headers: headers) { data, response, error in
+//            let string:String? = String.init(data: data!, encoding: .utf8);
+//            print(string as Any);
+//        };
+        GXNetWorking.post(host: host, query: query, headers: headers, parameters: parameters) { data, response, error in
             let string:String? = String.init(data: data!, encoding: .utf8);
             print(string as Any);
         };
