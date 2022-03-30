@@ -34,11 +34,17 @@ class GXSessionRequest: NSObject {
 //        return dataTask!;
 //    }
     
-    func dataTask(with url:String mode:GXRequestMode ,query:Dictionary<String, Any> ,headers:Dictionary<String, Any>,parameters:Dictionary<String, Any>,completionHandler:(@escaping (Data,URLResponse,Error)->Void)) -> URLSessionDataTask{
-        var request
+    func dataTask(host:String,mode:GXRequestMode,query:Dictionary<String, Any>,headers:Dictionary<String, Any>,parameters:Dictionary<String, Any>,completionHandler:(@escaping (Data,URLResponse,Error)->Void)) -> URLSessionDataTask{
+        let url:URL? = URL(string: host);
+        var request:URLRequest? = URLRequest(url: url!);
+        request?.httpMethod = self.string(mode: mode);
+        let dataTask:URLSessionDataTask? = self.dataTask(request: request!) { responseData, response, error in
+            
+        };
+        return dataTask!;
     }
     
-    func dataTask(with request:URLRequest,completionHandler:(@escaping (Data,URLResponse,Error)->Void)) -> URLSessionDataTask{
+    func dataTask(request:URLRequest,completionHandler:(@escaping (Data,URLResponse,Error)->Void)) -> URLSessionDataTask{
         let session:URLSession? = URLSession.shared;
         self.dataTask = session?.dataTask(with: request, completionHandler: { responseData, response, error in
             completionHandler(responseData!,response!,error!);
@@ -47,7 +53,7 @@ class GXSessionRequest: NSObject {
         return self.dataTask!;
     }
     
-    func string(withRequest mode:GXRequestMode) -> String{
+    func string(mode:GXRequestMode) -> String{
         var result:String? = "GET";
         switch mode{
         case .Get:
@@ -67,4 +73,7 @@ class GXSessionRequest: NSObject {
         }
         return result!;
     }
+    
+//    MARK: request
+//    func get(host:String,query:)
 }
