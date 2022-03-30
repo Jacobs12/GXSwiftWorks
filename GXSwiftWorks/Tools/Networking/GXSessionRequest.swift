@@ -57,6 +57,13 @@ class GXSessionRequest: NSObject {
         let url:URL? = URL(string: hostString!);
         var request:URLRequest? = URLRequest(url: url!);
         request?.httpMethod = self.string(mode: mode);
+//        设置header
+        if(headers?.isEmpty == false){
+            let header2:Dictionary! = headers;
+            for (key,value) in header2{
+                request?.addValue(value as! String, forHTTPHeaderField: key);
+            }
+        }
         let dataTask:URLSessionDataTask? = self.dataTask(request: request!) { responseData, response, error in
             completionHandler(responseData,response,error);
         };

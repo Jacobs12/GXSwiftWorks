@@ -32,7 +32,7 @@ class GXNetworkingViewController: UIViewController {
         self.createView();
         let host = "https://app.yibenmanhua.com";
         let query:Dictionary<String,Any>? = ["kk":"vvv"];
-        let headers:Dictionary<String,Any>? = [:];
+        let headers:Dictionary<String,Any>? = ["aaa":"bbb"];
         let parameters:Dictionary<String,Any>? = [:];
         GXNetWorking.get(host: host, query: query, headers: headers, parameters: parameters) { data, response, error in
             let string:String? = String.init(data: data!, encoding: .utf8);
