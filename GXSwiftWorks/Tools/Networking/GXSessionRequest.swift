@@ -38,7 +38,23 @@ class GXSessionRequest: NSObject {
         if(host.isEmpty){
             return nil;
         }
-        let url:URL? = URL(string: host);
+        var hostString:String? = host;
+//        拼接query参数
+        if(query?.isEmpty == false){
+            var resultHost:String? = String(format: "%@?", hostString!);
+            let query2:Dictionary! = query;
+            var index = 0;
+            for (key,value) in query2{
+                if(index != 0){
+                    resultHost?.append("&");
+                }
+                let object = String(format: "%@=%@", key ,value as! String);
+                resultHost?.append(object);
+                index = index + 1;
+            }
+            hostString = resultHost;
+        }
+        let url:URL? = URL(string: hostString!);
         var request:URLRequest? = URLRequest(url: url!);
         request?.httpMethod = self.string(mode: mode);
         let dataTask:URLSessionDataTask? = self.dataTask(request: request!) { responseData, response, error in
