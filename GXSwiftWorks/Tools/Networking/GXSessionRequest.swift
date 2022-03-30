@@ -75,5 +75,19 @@ class GXSessionRequest: NSObject {
     }
     
 //    MARK: request
-//    func get(host:String,query:)
+    
+    /// 发起GET请求
+    /// - Parameters:
+    ///   - host: 主机地址
+    ///   - query: query参数
+    ///   - headers: headers
+    ///   - parameters: body
+    ///   - completionHandler: 请求完成回调
+    /// - Returns: 请求任务实例
+    func get(host:String,query:Dictionary<String, Any>,headers:Dictionary<String, Any>,parameters:Dictionary<String, Any>,completionHandler:(@escaping (Data,URLResponse,Error)->Void)) -> URLSessionDataTask{
+        let dataTask:URLSessionDataTask? = self.dataTask(host: host, mode: .Get, query: query, headers: headers, parameters: parameters) { responseData, response, error in
+            completionHandler(responseData,response,error);
+        }
+        return dataTask!;
+    }
 }
