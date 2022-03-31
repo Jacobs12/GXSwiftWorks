@@ -7,6 +7,15 @@
 
 import UIKit
 
+class GXNetworkingModel:NSObject{
+//    KVC赋值时必须添加 @objc
+    @objc var subLemmaId:Any?;
+    
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        
+    }
+}
+
 class GXNetworkingViewController: UIViewController {
     
     var _textView:UITextView?;
@@ -39,15 +48,32 @@ class GXNetworkingViewController: UIViewController {
 //            print(string as Any);
 //        };
         GXNetWorking.post(host: host, query: query, headers: headers, parameters: parameters) { data, response, error in
-            let data1:Data = data!;
-            let string:String? = String.init(data: data!, encoding: .utf8);
-//            print(string as Any);
-            let dict = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! AnyObject;
-//            NSLog("%@", dict);
+                let jsonString:String? = String.init(data: data!, encoding: .utf8);
+    //            print(string as Any);
+//                let dict = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! AnyObject;
+    //            NSLog("%@", dict);
+//            let jsonData = jsonString?.data(using: .utf8);
+//            let dict = try JSONSerialization.jsonObject(with: jsonData!, options: .mutableContainers);
+            if(error == nil){
+                self.requestFinished(responseData: data!, response: response!);
+            }else{
+                
+            }
             DispatchQueue.main.async {
-                self.textView.text = string;
+                self.textView.text = jsonString;
             };
         };
+    }
+    
+    func requestFinished(responseData:Data,response:URLResponse) -> Void{
+        do{
+            let dict:Dictionary<String,Any> = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers) as! Dictionary<String, Any>;
+            let model:GXNetworkingModel? = GXNetworkingModel.init();
+            model?.setValuesForKeys(dict);
+            print(dict);
+        }catch{
+            
+        }
     }
     
     func createView() -> Void{
