@@ -41,10 +41,13 @@ class GXSessionRequest: NSObject {
         var hostString:String? = host;
 //        拼接query参数
         if(query?.isEmpty == false){
-            var resultHost:String? = String(format: "%@?", hostString!);
-            let query2:Dictionary! = query;
+            var surfixString:String? = "&";
+            if(hostString?.contains("?") == false){
+                surfixString = "?";
+            }
+            var resultHost:String? = String(format: "%@%@", hostString!,surfixString!);
             var index = 0;
-            for (key,value) in query2{
+            for (key,value) in query!{
                 if(index != 0){
                     resultHost?.append("&");
                 }
@@ -54,26 +57,25 @@ class GXSessionRequest: NSObject {
             }
             hostString = resultHost;
         }
+        hostString = hostString?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed);
         let url:URL? = URL(string: hostString!);
         var request:URLRequest? = URLRequest(url: url!);
         request?.httpMethod = self.string(mode: mode);
 //        设置header
         if(headers?.isEmpty == false){
-            let header2:Dictionary! = headers;
-            for (key,value) in header2{
+            for (key,value) in headers!{
                 request?.addValue(value as! String, forHTTPHeaderField: key);
             }
         }
 //        设置body
         if(parameters?.isEmpty == false){
-            let parameter2:Dictionary! = parameters;
             var body:String = "";
             var index = 0;
-            for (key,value) in parameter2{
+            for (key,value) in parameters!{
                 if(index != 0){
                     body.append("&");
                 }
-                var object = String(format: "%@=%@", key,value as! String);
+                let object = String(format: "%@=%@", key,value as! String);
                 body.append(object);
                 index = index + 1;
             }

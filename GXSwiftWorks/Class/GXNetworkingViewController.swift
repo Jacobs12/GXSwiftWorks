@@ -30,7 +30,7 @@ class GXNetworkingViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.createView();
-        let host = "https://app.yibenmanhua.com";
+        let host = "http://baike.baidu.com/api/openapi/BaikeLemmaCardApi?scope=103&format=json&appid=379020&bk_key=关键字&bk_length=600";
         let query:Dictionary<String,Any>? = ["kk":"vvv"];
         let headers:Dictionary<String,Any>? = ["aaa":"bbb"];
         let parameters:Dictionary<String,Any>? = ["ppp":"qqq"];
@@ -39,8 +39,14 @@ class GXNetworkingViewController: UIViewController {
 //            print(string as Any);
 //        };
         GXNetWorking.post(host: host, query: query, headers: headers, parameters: parameters) { data, response, error in
+            let data1:Data = data!;
             let string:String? = String.init(data: data!, encoding: .utf8);
-            print(string as Any);
+//            print(string as Any);
+            let dict = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! AnyObject;
+//            NSLog("%@", dict);
+            DispatchQueue.main.async {
+                self.textView.text = string;
+            };
         };
     }
     
