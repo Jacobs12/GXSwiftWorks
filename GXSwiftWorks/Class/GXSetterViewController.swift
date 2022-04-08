@@ -40,6 +40,18 @@ class GXSetterViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.orange;
         self.view.addSubview(self.label!);
+        
+        
+
+        
+        
+        
+        
+        let value = GXUtils.appVersion();
+        print(value);
+        
+        let result = GXUtils.bundleDisplayName();
+        print(result);
     }
     
 

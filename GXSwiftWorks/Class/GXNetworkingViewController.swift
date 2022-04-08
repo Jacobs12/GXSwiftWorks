@@ -47,6 +47,8 @@ class GXNetworkingViewController: UIViewController {
 //            let string:String? = String.init(data: data!, encoding: .utf8);
 //            print(string as Any);
 //        };
+        
+        
         GXNetWorking.post(host: host, query: query, headers: headers, parameters: parameters) { data, response, error in
                 let jsonString:String? = String.init(data: data!, encoding: .utf8);
     //            print(string as Any);
