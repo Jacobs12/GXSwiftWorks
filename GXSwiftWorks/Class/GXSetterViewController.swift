@@ -52,6 +52,12 @@ class GXSetterViewController: UIViewController {
         
         let result = GXUtils.bundleDisplayName();
         print(result);
+        
+        var string1 = "string1";
+        let string2 = "string2";
+        let string3 = string1 + string2;
+        string1 = "string6";
+        print(string3);
     }
     
 
