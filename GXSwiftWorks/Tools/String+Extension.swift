@@ -37,4 +37,12 @@ extension String{
             return false;
         }
     }
+    
+    /// 字符串类型转换为Int类型
+    /// - Returns: 转换的结果
+    func intValue() -> Int{
+        let string:String = self;
+        let result:Int = Int(string) ?? 0;
+        return result;
+    }
 }
