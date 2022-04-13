@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		842FF5D427B4E88A00C0BD73 /* GXSetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842FF5D327B4E88A00C0BD73 /* GXSetterViewController.swift */; };
+		843EFF182806AA1400E41C24 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EFF172806AA1400E41C24 /* UIColor+Hex.swift */; };
+		843EFF1A2806AA6700E41C24 /* UILabel+Attributed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EFF192806AA6700E41C24 /* UILabel+Attributed.swift */; };
 		844198F327E9ACF3004355BF /* GXNetworkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844198F227E9ACF3004355BF /* GXNetworkingViewController.swift */; };
 		844198F927E9AEDC004355BF /* GXProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844198F827E9AEDC004355BF /* GXProtocolViewController.swift */; };
 		844198FB27E9B093004355BF /* GXClassFunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844198FA27E9B093004355BF /* GXClassFunctionViewController.swift */; };
@@ -50,6 +52,8 @@
 /* Begin PBXFileReference section */
 		68DFB3940C38149EB1EAEBDE /* libPods-GXSwiftWorks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GXSwiftWorks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		842FF5D327B4E88A00C0BD73 /* GXSetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXSetterViewController.swift; sourceTree = "<group>"; };
+		843EFF172806AA1400E41C24 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		843EFF192806AA6700E41C24 /* UILabel+Attributed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Attributed.swift"; sourceTree = "<group>"; };
 		844198F227E9ACF3004355BF /* GXNetworkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXNetworkingViewController.swift; sourceTree = "<group>"; };
 		844198F827E9AEDC004355BF /* GXProtocolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXProtocolViewController.swift; sourceTree = "<group>"; };
 		844198FA27E9B093004355BF /* GXClassFunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXClassFunctionViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +190,8 @@
 				84B4AC0B27BE235400EA6723 /* GXUtils.swift */,
 				84B4AC1227BE243C00EA6723 /* GXColor.swift */,
 				84B4AC1427BE295300EA6723 /* GXDevice.swift */,
+				843EFF172806AA1400E41C24 /* UIColor+Hex.swift */,
+				843EFF192806AA6700E41C24 /* UILabel+Attributed.swift */,
 				84B4AC0D27BE23C000EA6723 /* Networking */,
 			);
 			path = Tools;
@@ -373,11 +379,13 @@
 				84B4AC1527BE295300EA6723 /* GXDevice.swift in Sources */,
 				84B4AC0727BDF04600EA6723 /* GXSingleCaseManager.swift in Sources */,
 				84648C7527B3CB060082BE8E /* ViewController.swift in Sources */,
+				843EFF1A2806AA6700E41C24 /* UILabel+Attributed.swift in Sources */,
 				84648C7127B3CB060082BE8E /* AppDelegate.swift in Sources */,
 				848B4B5F27EC1E8F005E0B8C /* GXNetworkingBridge.m in Sources */,
 				84B4AC0C27BE235400EA6723 /* GXUtils.swift in Sources */,
 				84B4AC1127BE23EB00EA6723 /* GXSessionRequest.swift in Sources */,
 				84B4AC0F27BE23DB00EA6723 /* GXNetWorking.swift in Sources */,
+				843EFF182806AA1400E41C24 /* UIColor+Hex.swift in Sources */,
 				84648CA227B3CB3C0082BE8E /* GXBlockViewController.swift in Sources */,
 				84B4AC1327BE243C00EA6723 /* GXColor.swift in Sources */,
 				844198F927E9AEDC004355BF /* GXProtocolViewController.swift in Sources */,
