@@ -26,4 +26,15 @@ extension String{
         let height:CGFloat = size.height;
         return height;
     }
+    
+    /// 判断两个字符串是否是相等的字符串
+    /// - Parameter string: 另外一个字符串
+    /// - Returns: 比对的结果
+    func isEqual(string:String) -> Bool{
+        if(self == string){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
