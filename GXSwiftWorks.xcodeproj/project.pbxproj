@@ -24,6 +24,8 @@
 		84648C9427B3CB080082BE8E /* GXSwiftWorksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84648C9327B3CB080082BE8E /* GXSwiftWorksUITestsLaunchTests.swift */; };
 		84648CA227B3CB3C0082BE8E /* GXBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84648CA127B3CB3C0082BE8E /* GXBlockViewController.swift */; };
 		848B4B5F27EC1E8F005E0B8C /* GXNetworkingBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 848B4B5E27EC1E8F005E0B8C /* GXNetworkingBridge.m */; };
+		84962A92280FF6A700078B9B /* js.html in Resources */ = {isa = PBXBuildFile; fileRef = 84962A91280FF6A700078B9B /* js.html */; };
+		84962A94280FF77700078B9B /* GXWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84962A93280FF77700078B9B /* GXWebViewViewController.swift */; };
 		84B4AC0727BDF04600EA6723 /* GXSingleCaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4AC0627BDF04600EA6723 /* GXSingleCaseManager.swift */; };
 		84B4AC0C27BE235400EA6723 /* GXUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4AC0B27BE235400EA6723 /* GXUtils.swift */; };
 		84B4AC0F27BE23DB00EA6723 /* GXNetWorking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4AC0E27BE23DB00EA6723 /* GXNetWorking.swift */; };
@@ -75,6 +77,8 @@
 		848B4B5C27EC161D005E0B8C /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
 		848B4B5D27EC1E8F005E0B8C /* GXNetworkingBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GXNetworkingBridge.h; sourceTree = "<group>"; };
 		848B4B5E27EC1E8F005E0B8C /* GXNetworkingBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GXNetworkingBridge.m; sourceTree = "<group>"; };
+		84962A91280FF6A700078B9B /* js.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = js.html; sourceTree = "<group>"; };
+		84962A93280FF77700078B9B /* GXWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXWebViewViewController.swift; sourceTree = "<group>"; };
 		84B4AC0627BDF04600EA6723 /* GXSingleCaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXSingleCaseManager.swift; sourceTree = "<group>"; };
 		84B4AC0B27BE235400EA6723 /* GXUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXUtils.swift; sourceTree = "<group>"; };
 		84B4AC0E27BE23DB00EA6723 /* GXNetWorking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXNetWorking.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 			children = (
 				84B4AC0827BE22B400EA6723 /* Tools */,
 				84648CA027B3CB0F0082BE8E /* Class */,
+				84962A90280FF64D00078B9B /* Resource */,
 				84648C7027B3CB060082BE8E /* AppDelegate.swift */,
 				84648C7427B3CB060082BE8E /* ViewController.swift */,
 				84648C7627B3CB060082BE8E /* Main.storyboard */,
@@ -182,8 +187,17 @@
 				844198FA27E9B093004355BF /* GXClassFunctionViewController.swift */,
 				844198F827E9AEDC004355BF /* GXProtocolViewController.swift */,
 				844198F227E9ACF3004355BF /* GXNetworkingViewController.swift */,
+				84962A93280FF77700078B9B /* GXWebViewViewController.swift */,
 			);
 			path = Class;
+			sourceTree = "<group>";
+		};
+		84962A90280FF64D00078B9B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				84962A91280FF6A700078B9B /* js.html */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		84B4AC0827BE22B400EA6723 /* Tools */ = {
@@ -329,6 +343,7 @@
 				84648C7D27B3CB080082BE8E /* LaunchScreen.storyboard in Resources */,
 				84648C7A27B3CB080082BE8E /* Assets.xcassets in Resources */,
 				84648C7827B3CB060082BE8E /* Main.storyboard in Resources */,
+				84962A92280FF6A700078B9B /* js.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +402,7 @@
 				848B4B5F27EC1E8F005E0B8C /* GXNetworkingBridge.m in Sources */,
 				84B4AC0C27BE235400EA6723 /* GXUtils.swift in Sources */,
 				843EFF1C2806B17500E41C24 /* String+Extension.swift in Sources */,
+				84962A94280FF77700078B9B /* GXWebViewViewController.swift in Sources */,
 				84B4AC1127BE23EB00EA6723 /* GXSessionRequest.swift in Sources */,
 				84B4AC0F27BE23DB00EA6723 /* GXNetWorking.swift in Sources */,
 				843EFF182806AA1400E41C24 /* UIColor+Hex.swift in Sources */,
