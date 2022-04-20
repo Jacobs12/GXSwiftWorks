@@ -45,4 +45,12 @@ extension String{
         let result:Int = Int(string) ?? 0;
         return result;
     }
+    
+    /// 字符串类型转换为Float类型
+    /// - Returns: 转换的结果
+    func floatValue() -> Float{
+        let string:String = self;
+        let result:Float = Float(string) ?? 0.0;
+        return result;
+    }
 }
