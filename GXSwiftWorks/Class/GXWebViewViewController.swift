@@ -43,7 +43,7 @@ class GXWebViewViewController: UIViewController,WKNavigationDelegate,WKScriptMes
                     handler?.set(delegate: self);
                     userContentController?.add(handler!, name: name);
                 }
-//                self.config?.userContentController.addScriptMessageHandler(<#T##scriptMessageHandlerWithReply: WKScriptMessageHandlerWithReply##WKScriptMessageHandlerWithReply#>, contentWorld: .defaultClient, name: <#T##String#>)
+                self.config?.userContentController = userContentController!;
                 if #available(iOS 14.0, *) {
                     let webpagePreferences:WKWebpagePreferences = WKWebpagePreferences.init();
                     webpagePreferences.allowsContentJavaScript = true
@@ -52,7 +52,8 @@ class GXWebViewViewController: UIViewController,WKNavigationDelegate,WKScriptMes
                     // Fallback on earlier versions
                     config.preferences.javaScriptEnabled = true;
                 };
-                
+                let y =  GXDevice.topSafeAreaHeight() + 64.0;
+                _webView = WKWebView.init(frame: CGRect.init(x: 0, y:y, width: GXDevice.screenWidth(), height: GXDevice.screenHeight() - y), configuration: config);
             }
             return _webView;
         }
