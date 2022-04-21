@@ -23,10 +23,8 @@ class GXScriptMessageHandlerDelegate : NSObject,WKNavigationDelegate,WKScriptMes
 }
 
 class GXWebViewViewController: UIViewController,WKNavigationDelegate,WKScriptMessageHandler,WKUIDelegate {
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        
-    }
-    
+    open var url:String?;
+    open var filePath:String?;
     
     var _webView:WKWebView?;
     var config:WKWebViewConfiguration?;
@@ -54,6 +52,22 @@ class GXWebViewViewController: UIViewController,WKNavigationDelegate,WKScriptMes
                 };
                 let y =  GXDevice.topSafeAreaHeight() + 64.0;
                 _webView = WKWebView.init(frame: CGRect.init(x: 0, y:y, width: GXDevice.screenWidth(), height: GXDevice.screenHeight() - y), configuration: config);
+                _webView?.uiDelegate = self;
+                _webView?.navigationDelegate = self;
+                _webView?.backgroundColor = UIColor.white;
+                _webView?.allowsLinkPreview = false;
+                _webView?.isOpaque = false;
+                _webView?.clipsToBounds = true;
+                _webView?.scrollView.showsVerticalScrollIndicator = false;
+                _webView?.scrollView.showsHorizontalScrollIndicator = false;
+                _webView?.contentMode = UIView.ContentMode.scaleAspectFill;
+                _webView?.navigationDelegate = self;
+                if #available(iOS 11.0, *) {
+                    _webView?.scrollView.contentInsetAdjustmentBehavior = UIScrollView.ContentInsetAdjustmentBehavior.never
+                } else {
+                    // Fallback on earlier versions
+                    self.automaticallyAdjustsScrollViewInsets = false;
+                };
             }
             return _webView;
         }
@@ -63,6 +77,25 @@ class GXWebViewViewController: UIViewController,WKNavigationDelegate,WKScriptMes
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.view.addSubview(self.webView!);
+        self.loadRequest();
+    }
+    
+    func loadRequest() -> Void{
+        var url:URL?;
+        if(self.url?.isEmpty == false){
+            url = URL.init(string: self.url!);
+        }else if(self.filePath?.isEmpty == false){
+            url = URL.init(fileURLWithPath: self.filePath!);
+        }
+        if(url == nil){
+            return;
+        }
+        let request:URLRequest? = URLRequest.init(url: url!);
+        self.webView?.load(request!);
     }
 
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        
+    }
 }
