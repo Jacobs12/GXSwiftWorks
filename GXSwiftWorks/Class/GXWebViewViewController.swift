@@ -20,6 +20,15 @@ class GXWebViewViewController: UIViewController {
                 self.config = config;
                 config.userContentController = WKUserContentController.init();
 //                self.config?.userContentController.addScriptMessageHandler(<#T##scriptMessageHandlerWithReply: WKScriptMessageHandlerWithReply##WKScriptMessageHandlerWithReply#>, contentWorld: .defaultClient, name: <#T##String#>)
+                if #available(iOS 14.0, *) {
+                    let webpagePreferences:WKWebpagePreferences = WKWebpagePreferences.init();
+                    webpagePreferences.allowsContentJavaScript = true
+                    config.defaultWebpagePreferences = webpagePreferences;
+                } else {
+                    // Fallback on earlier versions
+                    config.preferences.javaScriptEnabled = true;
+                };
+                
             }
             return _webView;
         }
