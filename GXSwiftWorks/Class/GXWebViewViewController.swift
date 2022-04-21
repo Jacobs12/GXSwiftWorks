@@ -8,6 +8,20 @@
 import UIKit
 import WebKit
 
+class GXScriptMessageHandlerDelegate : NSObject,WKScriptMessageHandler{
+//    用于防止向JS中注入handler的时候强引用了self,最终导致内存泄漏 webView不销毁
+    
+    weak var scriptDelegate:WKScriptMessageHandler?;
+    
+    func set(delegate:WKScriptMessageHandler) -> Void{
+        self.scriptDelegate = delegate;
+    }
+
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        self.scriptDelegate?.userContentController(userContentController, didReceive: message);
+    }
+}
+
 class GXWebViewViewController: UIViewController {
     
     var _webView:WKWebView?;
