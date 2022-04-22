@@ -94,6 +94,14 @@ class GXWebViewViewController: UIViewController,WKNavigationDelegate,WKScriptMes
         let request:URLRequest? = URLRequest.init(url: url!);
         self.webView?.load(request!);
     }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        
+    }
 
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         
