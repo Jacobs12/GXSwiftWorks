@@ -102,6 +102,10 @@ class GXWebViewViewController: UIViewController,WKNavigationDelegate,WKScriptMes
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         
     }
+    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        
+    }
 
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         
