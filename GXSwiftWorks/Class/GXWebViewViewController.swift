@@ -111,6 +111,11 @@ class GXWebViewViewController: UIViewController,WKNavigationDelegate,WKScriptMes
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         
     }
+    
+//    收到服务器重定向时调用
+    func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
+        
+    }
 
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         
