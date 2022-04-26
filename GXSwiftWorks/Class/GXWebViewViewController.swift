@@ -107,6 +107,7 @@ class GXWebViewViewController: UIViewController,WKNavigationDelegate,WKScriptMes
         
     }
     
+//    MARK: WKNavigationDelegate
 //    当内容开始到达主帧时被调用
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         
@@ -131,7 +132,11 @@ class GXWebViewViewController: UIViewController,WKNavigationDelegate,WKScriptMes
         decisionHandler(WKNavigationActionPolicy.allow);
     }
 
+//    MARK: WKScriptMessageHandler
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        
+        if(message.name.isEqual(string: "AppConfirm")){
+            let body:String = message.body as! String;
+            print("web确认是否在App中打开页面:=== message.name:AppConfirm,message.body:" + body);
+        }
     }
 }
