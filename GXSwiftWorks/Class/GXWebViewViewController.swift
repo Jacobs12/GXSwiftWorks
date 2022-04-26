@@ -106,6 +106,11 @@ class GXWebViewViewController: UIViewController,WKNavigationDelegate,WKScriptMes
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         
     }
+    
+//    当内容开始到达主帧时被调用
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        
+    }
 
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         
