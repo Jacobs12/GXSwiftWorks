@@ -119,7 +119,16 @@ class GXWebViewViewController: UIViewController,WKNavigationDelegate,WKScriptMes
     
 //    解决blank新起一个页面的冲突问题
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        
+//        如果是跳转一个新页面
+        if(navigationAction.targetFrame == nil){
+            webView.load(navigationAction.request);
+        }
+        if(navigationAction.targetFrame?.isMainFrame == false){
+            webView.evaluateJavaScript("var a = document.getElementsByTagName('a');for(var i=0;i<a.length;i++){a[i].setAttribute('target','');}") { val, error in
+                
+            }
+        }
+        decisionHandler(WKNavigationActionPolicy.allow);
     }
 
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
