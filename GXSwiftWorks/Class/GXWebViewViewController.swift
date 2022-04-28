@@ -146,6 +146,9 @@ class GXWebViewViewController: UIViewController,WKNavigationDelegate,WKScriptMes
         }else if(message.name.isEqual(string: "log")){
             let body:String = message.body as! String;
             print("JS交互log:=== message.name:log,message.body:" + body);
+        }else if(message.name.isEqual(string: "shareToPlatform")){
+            let body:String = message.body as! String;
+            print("分享到第三方社交平台:=== message.name:shareToPlatform,message.body:" + body);
         }
     }
 }
