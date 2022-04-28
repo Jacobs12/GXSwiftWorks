@@ -151,4 +151,13 @@ class GXWebViewViewController: UIViewController,WKNavigationDelegate,WKScriptMes
             print("分享到第三方社交平台:=== message.name:shareToPlatform,message.body:" + body);
         }
     }
+    
+//    MARK: Handler
+    func appConfirmResponse() -> Void{
+        let appVersion:String = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String;
+        let javaScript:String = "didOpenInApp('1','" + appVersion + "','" + UIDevice.current.identifierForVendor!.uuidString + "')";
+        self.webView?.evaluateJavaScript(javaScript, completionHandler: { handler, error in
+            
+        });
+    }
 }
