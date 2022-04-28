@@ -143,6 +143,9 @@ class GXWebViewViewController: UIViewController,WKNavigationDelegate,WKScriptMes
         }else if(message.name.isEqual(string: "getUserStatus")){
             let body:String = message.body as! String;
             print("web拉取用户信息,不拉登录页" + body);
+        }else if(message.name.isEqual(string: "log")){
+            let body:String = message.body as! String;
+            print("JS交互log:=== message.name:log,message.body:" + body);
         }
     }
 }
