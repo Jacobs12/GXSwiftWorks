@@ -137,6 +137,9 @@ class GXWebViewViewController: UIViewController,WKNavigationDelegate,WKScriptMes
         if(message.name.isEqual(string: "AppConfirm")){
             let body:String = message.body as! String;
             print("web确认是否在App中打开页面:=== message.name:AppConfirm,message.body:" + body);
+        }else if(message.name.isEqual(string: "getUserInformation")){
+            let body:String = message.body as! String;
+            print("web拉取用户信息:=== message.name:getUserInformation,message.body:" + body);
         }
     }
 }
