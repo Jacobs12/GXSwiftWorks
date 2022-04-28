@@ -137,6 +137,7 @@ class GXWebViewViewController: UIViewController,WKNavigationDelegate,WKScriptMes
         if(message.name.isEqual(string: "AppConfirm")){
             let body:String = message.body as! String;
             print("web确认是否在App中打开页面:=== message.name:AppConfirm,message.body:" + body);
+            self.appConfirmResponse();
         }else if(message.name.isEqual(string: "getUserInformation")){
             let body:String = message.body as! String;
             print("web拉取用户信息:=== message.name:getUserInformation,message.body:" + body);
@@ -159,5 +160,27 @@ class GXWebViewViewController: UIViewController,WKNavigationDelegate,WKScriptMes
         self.webView?.evaluateJavaScript(javaScript, completionHandler: { handler, error in
             
         });
+    }
+    
+    func getUserInfo() -> Void{
+        let userInfo = self.userInfo();
+        let javaScript:String = "loginComplete('" + userInfo + "')";
+        self.webView?.evaluateJavaScript(javaScript, completionHandler: { handler, error in
+            
+        });
+    }
+    
+    func userInfo() -> String{
+        let dict:Dictionary<String,Any> = ["uid":"1",
+                               "userName":"灰太狼"
+        ];
+        let data:Data;
+        do{
+           data = try JSONSerialization.data(withJSONObject: dict, options: .fragmentsAllowed);
+        }catch{
+            return "";
+        }
+        let userInfo:String = String.init(data: data, encoding: .utf8) ?? "";
+        return userInfo;
     }
 }
