@@ -158,6 +158,7 @@
 				84B4AC0827BE22B400EA6723 /* Tools */,
 				84648CA027B3CB0F0082BE8E /* Class */,
 				84962A90280FF64D00078B9B /* Resource */,
+				84B9729C282649E3003218E6 /* ThirdParty */,
 				84648C7027B3CB060082BE8E /* AppDelegate.swift */,
 				84648C7427B3CB060082BE8E /* ViewController.swift */,
 				84648C7627B3CB060082BE8E /* Main.storyboard */,
@@ -226,9 +227,6 @@
 			children = (
 				84B4AC0E27BE23DB00EA6723 /* GXNetWorking.swift */,
 				84B4AC1027BE23EB00EA6723 /* GXSessionRequest.swift */,
-				848B4B5C27EC161D005E0B8C /* Bridge-Header.h */,
-				848B4B5D27EC1E8F005E0B8C /* GXNetworkingBridge.h */,
-				848B4B5E27EC1E8F005E0B8C /* GXNetworkingBridge.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -249,6 +247,16 @@
 				84B9729A2826471E003218E6 /* GXRefreshAnimationFooter.swift */,
 			);
 			path = Refresh;
+			sourceTree = "<group>";
+		};
+		84B9729C282649E3003218E6 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				848B4B5C27EC161D005E0B8C /* Bridge-Header.h */,
+				848B4B5D27EC1E8F005E0B8C /* GXNetworkingBridge.h */,
+				848B4B5E27EC1E8F005E0B8C /* GXNetworkingBridge.m */,
+			);
+			path = ThirdParty;
 			sourceTree = "<group>";
 		};
 		E890C415EFF1216FB592D66F /* Pods */ = {
@@ -653,7 +661,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yiben.comic.GXSwiftWorks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "GXSwiftWorks/Tools/Networking/Bridge-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "GXSwiftWorks/ThirdParty/Bridge-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -684,7 +692,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yiben.comic.GXSwiftWorks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "GXSwiftWorks/Tools/Networking/Bridge-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "GXSwiftWorks/ThirdParty/Bridge-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

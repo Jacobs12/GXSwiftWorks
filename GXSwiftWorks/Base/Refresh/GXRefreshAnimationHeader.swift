@@ -28,6 +28,8 @@ class GXRefreshAnimationHeader: MJRefreshStateHeader {
             return _stateDurations;
         }
     };
+    
+//    var _gifView:lot
 
     /*
     // Only override draw() if you perform custom drawing.

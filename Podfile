@@ -6,5 +6,6 @@ target 'GXSwiftWorks' do
 
 pod 'MJRefresh'
 pod 'AFNetworking'
+pod 'lottie-ios'
 
 end

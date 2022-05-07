@@ -1,0 +1,6 @@
+module Pods_GXSwiftWorks {
+  umbrella header "Pods-GXSwiftWorks-umbrella.h"
+
+  export *
+  module * { export * }
+}

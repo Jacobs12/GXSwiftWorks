@@ -14,21 +14,25 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
+  - lottie-ios (3.2.3)
   - MJRefresh (3.7.5)
 
 DEPENDENCIES:
   - AFNetworking
+  - lottie-ios
   - MJRefresh
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+    - lottie-ios
     - MJRefresh
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
 
-PODFILE CHECKSUM: 561c5f8da316514bc4f208123eed4dce3c1e2872
+PODFILE CHECKSUM: 9ed0c9029152a81614de2648a39fdd9523897a9d
 
 COCOAPODS: 1.11.2
