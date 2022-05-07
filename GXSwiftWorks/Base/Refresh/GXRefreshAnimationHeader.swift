@@ -18,6 +18,16 @@ class GXRefreshAnimationHeader: MJRefreshStateHeader {
             return _stateImages;
         }
     };
+//    设置记录RefreshHeader所有状态对应的动画时间
+    var _stateDurations:Dictionary<String,Any>?;
+    var stateDurations:Dictionary<String,Any>?{
+        get{
+            if(_stateDurations?.isEmpty == true){
+                _stateDurations = [:];
+            }
+            return _stateDurations;
+        }
+    };
 
     /*
     // Only override draw() if you perform custom drawing.
