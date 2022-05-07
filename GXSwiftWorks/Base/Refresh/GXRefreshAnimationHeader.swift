@@ -8,6 +8,16 @@
 import UIKit
 
 class GXRefreshAnimationHeader: MJRefreshStateHeader {
+//    设置存储RefreshHeader所有状态对应的动画图片
+    var _stateImages:Dictionary<String,Any>?;
+    var stateImages:Dictionary<String,Any>?{
+        get{
+            if(_stateImages?.isEmpty == true){
+                _stateImages = [:];
+            }
+            return _stateImages;
+        }
+    };
 
     /*
     // Only override draw() if you perform custom drawing.
