@@ -32,6 +32,7 @@
 		84B4AC1127BE23EB00EA6723 /* GXSessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4AC1027BE23EB00EA6723 /* GXSessionRequest.swift */; };
 		84B4AC1327BE243C00EA6723 /* GXColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4AC1227BE243C00EA6723 /* GXColor.swift */; };
 		84B4AC1527BE295300EA6723 /* GXDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4AC1427BE295300EA6723 /* GXDevice.swift */; };
+		84B9729328264363003218E6 /* GXBaseViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B9729228264363003218E6 /* GXBaseViewViewController.swift */; };
 		C10788DEDC4F9EE3A52B204A /* libPods-GXSwiftWorks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68DFB3940C38149EB1EAEBDE /* libPods-GXSwiftWorks.a */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		84B4AC1027BE23EB00EA6723 /* GXSessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXSessionRequest.swift; sourceTree = "<group>"; };
 		84B4AC1227BE243C00EA6723 /* GXColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXColor.swift; sourceTree = "<group>"; };
 		84B4AC1427BE295300EA6723 /* GXDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXDevice.swift; sourceTree = "<group>"; };
+		84B9729228264363003218E6 /* GXBaseViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXBaseViewViewController.swift; sourceTree = "<group>"; };
 		B58FBC9DFB80765D872A2F8B /* Pods-GXSwiftWorks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GXSwiftWorks.debug.xcconfig"; path = "Target Support Files/Pods-GXSwiftWorks/Pods-GXSwiftWorks.debug.xcconfig"; sourceTree = "<group>"; };
 		F0FCE7BE9F548F19CEEE3FA8 /* Pods-GXSwiftWorks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GXSwiftWorks.release.xcconfig"; path = "Target Support Files/Pods-GXSwiftWorks/Pods-GXSwiftWorks.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -209,6 +211,7 @@
 				843EFF172806AA1400E41C24 /* UIColor+Hex.swift */,
 				843EFF192806AA6700E41C24 /* UILabel+Attributed.swift */,
 				843EFF1B2806B17500E41C24 /* String+Extension.swift */,
+				84B9729228264363003218E6 /* GXBaseViewViewController.swift */,
 				84B4AC0D27BE23C000EA6723 /* Networking */,
 			);
 			path = Tools;
@@ -394,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				844198FB27E9B093004355BF /* GXClassFunctionViewController.swift in Sources */,
+				84B9729328264363003218E6 /* GXBaseViewViewController.swift in Sources */,
 				84B4AC1527BE295300EA6723 /* GXDevice.swift in Sources */,
 				84B4AC0727BDF04600EA6723 /* GXSingleCaseManager.swift in Sources */,
 				84648C7527B3CB060082BE8E /* ViewController.swift in Sources */,
