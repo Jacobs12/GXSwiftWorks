@@ -11,5 +11,6 @@
 // 建立桥接方式：Build Settings -> Swift Compiler - General -> Objective-C Bridging Header:GXSwiftWorks/Tools/Networking/Bridge-Header.h
 #import "AFNetworking.h"
 #import "GXNetworkingBridge.h"
+#import "MJRefresh.h"
 
 #endif /* Bridge_Header_h */
