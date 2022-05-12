@@ -35,6 +35,8 @@
 		84B9729328264363003218E6 /* GXBaseViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B9729228264363003218E6 /* GXBaseViewViewController.swift */; };
 		84B97299282646F0003218E6 /* GXRefreshAnimationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B97298282646F0003218E6 /* GXRefreshAnimationHeader.swift */; };
 		84B9729B2826471E003218E6 /* GXRefreshAnimationFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B9729A2826471E003218E6 /* GXRefreshAnimationFooter.swift */; };
+		84D1C328282CE28100A286F6 /* Footer.json in Resources */ = {isa = PBXBuildFile; fileRef = 84D1C326282CE28100A286F6 /* Footer.json */; };
+		84D1C329282CE28100A286F6 /* Header.json in Resources */ = {isa = PBXBuildFile; fileRef = 84D1C327282CE28100A286F6 /* Header.json */; };
 		C10788DEDC4F9EE3A52B204A /* libPods-GXSwiftWorks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68DFB3940C38149EB1EAEBDE /* libPods-GXSwiftWorks.a */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +93,8 @@
 		84B9729228264363003218E6 /* GXBaseViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXBaseViewViewController.swift; sourceTree = "<group>"; };
 		84B97298282646F0003218E6 /* GXRefreshAnimationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXRefreshAnimationHeader.swift; sourceTree = "<group>"; };
 		84B9729A2826471E003218E6 /* GXRefreshAnimationFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXRefreshAnimationFooter.swift; sourceTree = "<group>"; };
+		84D1C326282CE28100A286F6 /* Footer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Footer.json; sourceTree = "<group>"; };
+		84D1C327282CE28100A286F6 /* Header.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Header.json; sourceTree = "<group>"; };
 		B58FBC9DFB80765D872A2F8B /* Pods-GXSwiftWorks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GXSwiftWorks.debug.xcconfig"; path = "Target Support Files/Pods-GXSwiftWorks/Pods-GXSwiftWorks.debug.xcconfig"; sourceTree = "<group>"; };
 		F0FCE7BE9F548F19CEEE3FA8 /* Pods-GXSwiftWorks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GXSwiftWorks.release.xcconfig"; path = "Target Support Files/Pods-GXSwiftWorks/Pods-GXSwiftWorks.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,6 +207,7 @@
 		84962A90280FF64D00078B9B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				84D1C325282CE26500A286F6 /* Animation */,
 				84962A91280FF6A700078B9B /* js.html */,
 			);
 			path = Resource;
@@ -257,6 +262,15 @@
 				848B4B5E27EC1E8F005E0B8C /* GXNetworkingBridge.m */,
 			);
 			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		84D1C325282CE26500A286F6 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				84D1C326282CE28100A286F6 /* Footer.json */,
+				84D1C327282CE28100A286F6 /* Header.json */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		E890C415EFF1216FB592D66F /* Pods */ = {
@@ -374,7 +388,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D1C328282CE28100A286F6 /* Footer.json in Resources */,
 				84648C7D27B3CB080082BE8E /* LaunchScreen.storyboard in Resources */,
+				84D1C329282CE28100A286F6 /* Header.json in Resources */,
 				84648C7A27B3CB080082BE8E /* Assets.xcassets in Resources */,
 				84648C7827B3CB060082BE8E /* Main.storyboard in Resources */,
 				84962A92280FF6A700078B9B /* js.html in Resources */,

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class GXRefreshAnimationHeader: MJRefreshStateHeader {
 //    设置存储RefreshHeader所有状态对应的动画图片
@@ -29,7 +30,19 @@ class GXRefreshAnimationHeader: MJRefreshStateHeader {
         }
     };
     
-//    var _gifView:lot
+    /// 实例化tableView Header加载中动画，并实现懒加载模式
+    var _gifView:AnimationView?;
+    var gifView:AnimationView?{
+        get{
+            if(_gifView == nil){
+                _gifView = AnimationView(name: "Header");
+                _gifView?.contentMode = UIView.ContentMode.scaleAspectFit;
+                _gifView?.center = CGPoint.init(x: UIScreen.main.bounds.size.width / 2.0, y: 32.0);
+                _gifView?.loopMode = LottieLoopMode.loop;
+            }
+            return _gifView;
+        }
+    };
 
     /*
     // Only override draw() if you perform custom drawing.
