@@ -77,6 +77,13 @@ class GXRefreshAnimationHeader: MJRefreshStateHeader {
     
     override var state: MJRefreshState{
         set{
+//            检查刷新中动画当前的状态
+            let oldState:MJRefreshState = super.state;
+            if (newValue == oldState){
+                return;
+            }
+            super.state = newValue;
+            
             
         }
         get{
