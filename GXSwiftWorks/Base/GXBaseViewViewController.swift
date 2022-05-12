@@ -24,7 +24,7 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
                 };
                 _tableView?.showsVerticalScrollIndicator = false;
             }
-            return _tableView;
+            return _tableView!;
         }
     };
     
@@ -36,6 +36,25 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
     }
     
 
+//    MARK: tableView delegate
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1;
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0;
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell:UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: "ID");
+        if(cell == nil){
+            cell = UITableViewCell.init(style: .default, reuseIdentifier: "ID");
+            cell?.selectionStyle = UITableViewCell.SelectionStyle.none;
+        }
+        return cell!;
+    }
+    
     /*
     // MARK: - Navigation
 
