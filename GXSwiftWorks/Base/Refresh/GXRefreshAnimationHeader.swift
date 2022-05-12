@@ -10,8 +10,11 @@ import Lottie
 
 class GXRefreshAnimationHeader: MJRefreshStateHeader {
 //    设置存储RefreshHeader所有状态对应的动画图片
-    var _stateImages:Dictionary<String,Any>?;
-    var stateImages:Dictionary<String,Any>?{
+    var _stateImages:Dictionary<Int,Any>?;
+    var stateImages:Dictionary<Int,Any>?{
+        set{
+            
+        }
         get{
             if(_stateImages?.isEmpty == true){
                 _stateImages = [:];
@@ -43,6 +46,16 @@ class GXRefreshAnimationHeader: MJRefreshStateHeader {
             return _gifView;
         }
     };
+    
+//    初始化刷新中动画图片数组、动画时间数组和刷新动画状态
+    func set(_ images:Array<Any>, duration:TimeInterval, state:MJRefreshState) -> Void{
+//        if(images.isEmpty == true){
+//            return;
+//        }
+//        let index:Int = state as! Int;
+//        self.stateImages?[index] = images;
+//        self.stateDurations[index] =
+    }
 
     /*
     // Only override draw() if you perform custom drawing.
