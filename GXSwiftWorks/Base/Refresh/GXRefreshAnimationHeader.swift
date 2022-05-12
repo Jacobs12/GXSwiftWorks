@@ -74,6 +74,15 @@ class GXRefreshAnimationHeader: MJRefreshStateHeader {
         }
         self.gifView?.contentMode = UIView.ContentMode.center;
     }
+    
+    override var state: MJRefreshState{
+        set{
+            
+        }
+        get{
+            return super.state;
+        }
+    };
 
     /*
     // Only override draw() if you perform custom drawing.
