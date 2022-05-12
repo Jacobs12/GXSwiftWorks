@@ -7,8 +7,27 @@
 
 import UIKit
 
-class GXBaseViewViewController: UIViewController {
+class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
+    var _tableView:UITableView?;
+    var tableView:UITableView{
+        get{
+            if(_tableView == nil){
+                _tableView = UITableView.init(frame: CGRect.init(x: 0.0, y: 0.0, width: UIScreen.main.bounds.size.width, height: self.view.bounds.size.height), style: .plain);
+                _tableView?.dataSource = self;
+                _tableView?.delegate = self;
+                _tableView?.separatorStyle = UITableViewCell.SeparatorStyle.none;
+                if #available(iOS 11.0, *) {
+                    _tableView?.contentInsetAdjustmentBehavior = UIScrollView.ContentInsetAdjustmentBehavior.never
+                } else {
+                    // Fallback on earlier versions
+                };
+                _tableView?.showsVerticalScrollIndicator = false;
+            }
+            return _tableView;
+        }
+    };
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
