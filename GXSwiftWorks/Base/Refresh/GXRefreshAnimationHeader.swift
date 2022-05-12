@@ -83,11 +83,32 @@ class GXRefreshAnimationHeader: MJRefreshStateHeader {
                 return;
             }
             super.state = newValue;
-            
+//            根据刷新状态执行对应的方法
+            if(state == MJRefreshState.pulling || state == MJRefreshState.refreshing){
+                self.lotPlay();
+            }else{
+                self.stopAnimating();
+            }
             
         }
         get{
             return super.state;
+        }
+    };
+    
+    func lotPlay() -> Void{
+        if(self.gifView?.isAnimationPlaying == true){
+            
+        }else{
+            self.gifView?.play(completion: { isAnimationFinished in
+                
+            });
+        }
+    };
+    
+    func stopAnimating() -> Void{
+        if(self.gifView?.isAnimationPlaying == true){
+            self.gifView?.stop();
         }
     };
 
