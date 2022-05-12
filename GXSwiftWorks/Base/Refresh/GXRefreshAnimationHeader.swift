@@ -56,10 +56,14 @@ class GXRefreshAnimationHeader: MJRefreshStateHeader {
 //        self.stateImages?[index] = images;
 //        self.stateDurations?[index] = duration;
 //        根据图片设置控件的高度
-        let image:UIImage = images.first;
+        let image:UIImage = images.first as! UIImage;
         if(image.size.height > self.mj_h){
             self.mj_h = image.size.height;
         }
+    }
+    
+    func set(_ images:Array<Any>, state:MJRefreshState) -> Void{
+        
     }
 
     /*
