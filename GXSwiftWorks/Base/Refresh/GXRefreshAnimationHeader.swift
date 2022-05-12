@@ -65,6 +65,15 @@ class GXRefreshAnimationHeader: MJRefreshStateHeader {
     func set(_ images:Array<Any>, state:MJRefreshState) -> Void{
         
     }
+    
+    /// 重写替换子视图方法placeSubviews
+    override func placeSubviews() {
+        super.placeSubviews();
+        if(self.gifView?.constraints.count == 0){
+            return;
+        }
+        self.gifView?.contentMode = UIView.ContentMode.center;
+    }
 
     /*
     // Only override draw() if you perform custom drawing.
