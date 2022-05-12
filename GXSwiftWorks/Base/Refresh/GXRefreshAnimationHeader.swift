@@ -49,12 +49,17 @@ class GXRefreshAnimationHeader: MJRefreshStateHeader {
     
 //    初始化刷新中动画图片数组、动画时间数组和刷新动画状态
     func set(_ images:Array<Any>, duration:TimeInterval, state:MJRefreshState) -> Void{
-//        if(images.isEmpty == true){
-//            return;
-//        }
+        if(images.isEmpty == true){
+            return;
+        }
 //        let index:Int = state as! Int;
 //        self.stateImages?[index] = images;
-//        self.stateDurations[index] =
+//        self.stateDurations?[index] = duration;
+//        根据图片设置控件的高度
+        let image:UIImage = images.first;
+        if(image.size.height > self.mj_h){
+            self.mj_h = image.size.height;
+        }
     }
 
     /*
