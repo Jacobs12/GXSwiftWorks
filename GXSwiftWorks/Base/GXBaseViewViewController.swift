@@ -87,6 +87,23 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
         self.view.backgroundColor = UIColor.white;
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated);
+        if(self.tableView.mj_header != nil || self.collectionView?.mj_header != nil){
+            if(self.refreshHeader?.state == MJRefreshState.refreshing){
+                self.refreshHeader?.gifView?.play(completion: { isAnimationFinished in
+                    
+                });
+            }
+        }
+        if(self.tableView.mj_footer != nil || self.collectionView?.mj_footer != nil){
+            self.refreshFooter?.gifView?.play(completion: { isAnimationFinished in
+                
+            });
+        }
+
+    }
+    
 //    MARK: refresh回调
     
     /// 实现下拉刷新指向执行方法

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class GXRefreshAnimationFooter: MJRefreshAutoNormalFooter {
 
@@ -16,5 +17,7 @@ class GXRefreshAnimationFooter: MJRefreshAutoNormalFooter {
         // Drawing code
     }
     */
-
+    var _gifView:AnimationView?;
+    var gifView:AnimationView?;
+    
 }
