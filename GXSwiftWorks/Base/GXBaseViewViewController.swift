@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate {
 
     var _tableView:UITableView?;
     var tableView:UITableView{
@@ -42,7 +42,15 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
     var _collectionView:UICollectionView?;
     var collectionView:UICollectionView?{
         if(_collectionView == nil){
-            
+            _collectionView = UICollectionView.init(frame: CGRect.init(x: 0.0, y: 0.0, width: 0.0, height: 0.0), collectionViewLayout: self.flowLayout!);
+            _collectionView?.dataSource = self;
+            _collectionView?.delegate = self;
+            if #available(iOS 11.0, *) {
+                _collectionView?.contentInsetAdjustmentBehavior = UIScrollView.ContentInsetAdjustmentBehavior.never
+            } else {
+                // Fallback on earlier versions
+            };
+            _collectionView?.backgroundView = UIColor.white;
         }
         return _collectionView;
     };
