@@ -59,8 +59,10 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
     var refreshHeader:GXRefreshAnimationHeader?{
         get{
             if(_refreshHeader == nil){
+                weak var weak_self = self;
                 _refreshHeader = GXRefreshAnimationHeader(refreshingBlock: {
-                    
+                    weak_self?.refreshDataFromServer();
+                    weak_self?.resetRefreshFooter();
                 });
             }
             return _refreshHeader;
@@ -87,9 +89,9 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
         
     }
     
-//    func resetRefreshFooter() -> Void{
+    func resetRefreshFooter() -> Void{
 //        if(self.tableView.mj_footer == nil && self.coll)
-//    }
+    }
 
 //    MARK: tableView delegate
     
