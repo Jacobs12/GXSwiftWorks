@@ -28,6 +28,25 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
         }
     };
     
+    var _flowLayout:UICollectionViewFlowLayout?;
+    var flowLayout:UICollectionViewFlowLayout?{
+        if(_flowLayout == nil){
+            _flowLayout = UICollectionViewFlowLayout.init();
+            _flowLayout?.minimumLineSpacing = 0.0;
+            _flowLayout?.minimumInteritemSpacing = 0.0;
+            _flowLayout?.sectionInset = UIEdgeInsets.init(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0);
+        }
+        return _flowLayout;
+    };
+    
+    var _collectionView:UICollectionView?;
+    var collectionView:UICollectionView?{
+        if(_collectionView == nil){
+            
+        }
+        return _collectionView;
+    };
+    
     var _refreshHeader:GXRefreshAnimationHeader?;
     var refreshHeader:GXRefreshAnimationHeader?{
         get{
@@ -55,9 +74,14 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
         
     }
     
+    /// 实现上拉加载指向执行方法
     func loadMoreFromServer() -> Void{
         
     }
+    
+//    func resetRefreshFooter() -> Void{
+//        if(self.tableView.mj_footer == nil && self.coll)
+//    }
 
 //    MARK: tableView delegate
     
