@@ -28,6 +28,19 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
         }
     };
     
+    var _refreshHeader:GXRefreshAnimationHeader?;
+    var refreshHeader:GXRefreshAnimationHeader?{
+        get{
+            if(_refreshHeader == nil){
+                _refreshHeader = GXRefreshAnimationHeader(refreshingBlock: {
+                    
+                });
+            }
+            return _refreshHeader;
+        }
+    };
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
