@@ -50,7 +50,7 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
             } else {
                 // Fallback on earlier versions
             };
-            _collectionView?.backgroundView = UIColor.white;
+            _collectionView?.backgroundColor = UIColor.white;
         }
         return _collectionView;
     };
@@ -107,6 +107,21 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
             cell = UITableViewCell.init(style: .default, reuseIdentifier: "ID");
             cell?.selectionStyle = UITableViewCell.SelectionStyle.none;
         }
+        return cell!;
+    }
+    
+//    MARK: collectionView delegate
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1;
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0;
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell:UICollectionViewCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "ID", for: indexPath);
         return cell!;
     }
     
