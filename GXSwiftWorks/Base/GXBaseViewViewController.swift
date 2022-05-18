@@ -69,7 +69,17 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
         }
     };
 
-    
+    var _refreshFooter:GXRefreshAnimationFooter?;
+    var refreshFooter:GXRefreshAnimationFooter?{
+        if(_refreshFooter == nil){
+            weak var weak_self = self;
+            _refreshFooter = GXRefreshAnimationFooter(refreshingBlock: {
+                weak_self?.loadMoreFromServer();
+            });
+        }
+        return _refreshFooter;
+    };
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -89,9 +99,12 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
         
     }
     
-    func resetRefreshFooter() -> Void{
-//        if(self.tableView.mj_footer == nil && self.coll)
-    }
+//    func resetRefreshFooter() -> Void{
+//        if(self.tableView.mj_footer == nil && self.collectionView?.mj_footer == nil){
+//            return;
+//        }
+//        self.ref
+//    }
 
 //    MARK: tableView delegate
     
