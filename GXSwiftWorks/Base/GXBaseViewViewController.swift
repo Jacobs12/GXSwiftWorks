@@ -48,6 +48,16 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
         self.view.backgroundColor = UIColor.white;
     }
     
+//    MARK: refresh回调
+    
+    /// 实现下拉刷新指向执行方法
+    func refreshDataFromServer() -> Void{
+        
+    }
+    
+    func loadMoreFromServer() -> Void{
+        
+    }
 
 //    MARK: tableView delegate
     
