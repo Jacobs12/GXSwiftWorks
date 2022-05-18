@@ -99,12 +99,14 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
         
     }
     
-//    func resetRefreshFooter() -> Void{
-//        if(self.tableView.mj_footer == nil && self.collectionView?.mj_footer == nil){
-//            return;
-//        }
-//        self.ref
-//    }
+    /// 实现重置上拉加载方法
+    func resetRefreshFooter() -> Void{
+        if(self.tableView.mj_footer == nil && self.collectionView?.mj_footer == nil){
+            return;
+        }
+        self.refreshFooter?.resetNoMoreData();
+        self.refreshFooter?.state = MJRefreshState.idle;
+    }
 
 //    MARK: tableView delegate
     
