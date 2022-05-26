@@ -8,7 +8,8 @@
 import UIKit
 
 class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate {
-
+    
+    /// 创建列表视图
     var _tableView:UITableView?;
     var tableView:UITableView{
         get{
@@ -206,6 +207,11 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
     
     /// 实现网络请求任务成功结束时回调方法
     func requestFinished(_ response:URLResponse,requestData:Data) ->Void{
+//        self.sessionRequest = nil;
+    }
+    
+    /// 实现网络请求任务成功失败时回调方法
+    func requestFailed(_ response:URLResponse,requestData:Data) ->Void{
 //        self.sessionRequest = nil;
     }
     
