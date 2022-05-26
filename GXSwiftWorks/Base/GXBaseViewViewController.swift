@@ -202,6 +202,13 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
         return cell!;
     }
     
+//    MARK: 回调
+    
+    /// 实现网络请求任务成功结束时回调方法
+    func requestFinished(_ response:URLResponse,requestData:Data) ->Void{
+//        self.sessionRequest = nil;
+    }
+    
     /*
     // MARK: - Navigation
 
