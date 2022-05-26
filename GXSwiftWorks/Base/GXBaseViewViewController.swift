@@ -104,6 +104,13 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
 
     }
     
+//    MARK: refresh
+    
+    /// 创建列表视图下拉刷新头视图
+    func createTableViewRefreshHeader() ->Void{
+        self.tableView.mj_header = self.refreshHeader;
+    }
+    
 //    MARK: refresh回调
     
     /// 实现下拉刷新指向执行方法
