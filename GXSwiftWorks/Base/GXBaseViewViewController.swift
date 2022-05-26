@@ -111,6 +111,11 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
         self.tableView.mj_header = self.refreshHeader;
     }
     
+    /// 创建列表视图上拉加载足视图
+    func createTableViewRefreshFooter() -> Void{
+        self.tableView.mj_footer = self.refreshFooter;
+    }
+    
 //    MARK: refresh回调
     
     /// 实现下拉刷新指向执行方法
