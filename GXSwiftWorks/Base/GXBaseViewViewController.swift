@@ -126,6 +126,14 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
         self.collectionView?.mj_footer = self.refreshFooter;
     }
     
+    /// 停止下拉刷新头视图动画并完成动画结束回调
+    /// - Parameter completion: 动画完成回调
+    func endRefreshHeaderAnimation(_ completion:(@escaping () ->Void)) ->Void{
+        self.refreshHeader?.endRefreshing(completionBlock: {
+            completion();
+        });
+    }
+    
 //    MARK: refresh回调
     
     /// 实现下拉刷新指向执行方法
