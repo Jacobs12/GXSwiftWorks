@@ -121,6 +121,11 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
         self.collectionView?.mj_header = self.refreshHeader;
     }
     
+    /// 创建集合视图上拉加载足视图
+    func createCollectionFooter() ->Void{
+        self.collectionView?.mj_footer = self.refreshFooter;
+    }
+    
 //    MARK: refresh回调
     
     /// 实现下拉刷新指向执行方法
