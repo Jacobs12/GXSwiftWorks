@@ -142,6 +142,11 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
         });
     }
     
+    /// 停止上拉加载足视图动画并显示无更多数据提示
+    func endRefreshFooterWithNoMoreData() ->Void{
+        self.refreshFooter?.endRefreshingWithNoMoreData();
+    }
+    
 //    MARK: refresh回调
     
     /// 实现下拉刷新指向执行方法
