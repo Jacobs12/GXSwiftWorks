@@ -134,6 +134,14 @@ class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableVi
         });
     }
     
+    /// 停止上拉加载足视图动画并完成动画结束回调
+    /// - Parameter completion: 动画完成回调
+    func endRefreshFooterAnimation(_ completion:(@escaping () -> Void)) ->Void{
+        self.refreshFooter?.endRefreshing(completionBlock: {
+            completion();
+        });
+    }
+    
 //    MARK: refresh回调
     
     /// 实现下拉刷新指向执行方法
