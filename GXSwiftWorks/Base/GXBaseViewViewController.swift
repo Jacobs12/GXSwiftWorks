@@ -8,6 +8,8 @@
 import UIKit
 
 class GXBaseViewViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate {
+//    创建视图控制器内网络请求任务
+    var sessionRequest:GXSessionRequest?;
     
     /// 创建列表视图
     var _tableView:UITableView?;
