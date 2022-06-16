@@ -115,4 +115,8 @@ class GXRefreshAnimationFooter: MJRefreshAutoNormalFooter {
         }
     };
     
+    override func resetNoMoreData() {
+        _isDraging == false;
+        super.resetNoMoreData();
+    }
 }
