@@ -36,10 +36,24 @@ class GXRefreshAnimationFooter: MJRefreshAutoNormalFooter {
     var _isDraging:Bool?; // 记录是否处于拖动状态
     
     var _stateImages:Dictionary<String,Any>?;
-    var stateImages:Dictionary<String,Any>?; // 记录所有状态对应的动画图片
+    var stateImages:Dictionary<String,Any>?{
+        get{
+            if(_stateImages == nil){
+                _stateImages = [:];
+            }
+            return _stateImages;
+        }
+    }; // 记录所有状态对应的动画图片
     
     var _stateDurations:Dictionary<String,Any>?;
-    var stateDurations:Dictionary<String,Any>?; // 记录所有状态对应的动画时间
+    var stateDurations:Dictionary<String,Any>?{
+        get{
+            if(_stateDurations == nil){
+                _stateDurations = [:];
+            }
+            return _stateDurations;
+        }
+    }; // 记录所有状态对应的动画时间
 
     override func prepare() {
         super.prepare();
@@ -47,5 +61,11 @@ class GXRefreshAnimationFooter: MJRefreshAutoNormalFooter {
         self.stateLabel?.isHidden = true;
         self.loadingView?.isHidden = true;
         self.setTitle("数据加载完毕", for: .noMoreData);
+    }
+    
+//    MARK: 公共方法
+//    实现根据图片设置控件高度的方法
+    public func set(_ images:Array<Any>,duration:TimeInterval,state:MJRefreshState) -> Void{
+        
     }
 }
