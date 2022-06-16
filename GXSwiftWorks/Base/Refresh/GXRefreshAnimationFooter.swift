@@ -19,5 +19,6 @@ class GXRefreshAnimationFooter: MJRefreshAutoNormalFooter {
     */
     var _gifView:AnimationView?;
     var gifView:AnimationView?;
+    var _isDraging:Bool?; // 记录是否处于拖动状态
     
 }
