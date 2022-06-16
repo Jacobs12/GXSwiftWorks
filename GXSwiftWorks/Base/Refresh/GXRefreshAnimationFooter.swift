@@ -7,6 +7,7 @@
 
 import UIKit
 import Lottie
+import MJRefresh
 
 class GXRefreshAnimationFooter: MJRefreshAutoNormalFooter {
 
@@ -81,18 +82,36 @@ class GXRefreshAnimationFooter: MJRefreshAutoNormalFooter {
             if (newValue == oldState){
                 return;
             }
-//            super.state = newValue;
-////            根据刷新状态执行对应的方法
-//            if(state == MJRefreshState.pulling || state == MJRefreshState.refreshing){
-//                self.gifView?.isHidden = false;
-//                self.lotPlay();
-//            }else{
-//                self.stopAnimating();
-//            }
-            
+            super.state = newValue;
+//            根据刷新状态执行对应的方法
+            if(state == MJRefreshState.pulling || state == MJRefreshState.refreshing){
+                self.gifView?.isHidden = false;
+                self.lotPlay();
+            }else if(state == MJRefreshState.idle){
+                self.stopAnimating();
+            }else if(state == MJRefreshState.noMoreData){
+                self.stateLabel?.isHidden = false;
+                self.stopAnimating();
+            }
         }
         get{
             return super.state;
+        }
+    };
+    
+    func lotPlay() -> Void{
+        if(self.gifView?.isAnimationPlaying == true){
+            
+        }else{
+            self.gifView?.play(completion: { isAnimationFinished in
+                
+            });
+        }
+    };
+    
+    func stopAnimating() -> Void{
+        if(self.gifView?.isAnimationPlaying == true){
+            self.gifView?.stop();
         }
     };
     
