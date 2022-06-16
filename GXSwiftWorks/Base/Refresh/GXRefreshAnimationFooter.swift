@@ -119,4 +119,11 @@ class GXRefreshAnimationFooter: MJRefreshAutoNormalFooter {
         _isDraging == false;
         super.resetNoMoreData();
     }
+    
+    /// 实现scrollView的拖拽状态发生改变的时候的调用方法
+    /// - Parameter change: change description
+    override func scrollViewPanStateDidChange(_ change: [AnyHashable : Any]?) {
+        super.scrollViewPanStateDidChange(change);
+        _isDraging = true;
+    }
 }
