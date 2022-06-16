@@ -68,4 +68,32 @@ class GXRefreshAnimationFooter: MJRefreshAutoNormalFooter {
     public func set(_ images:Array<Any>,duration:TimeInterval,state:MJRefreshState) -> Void{
         
     }
+    
+    public func set(_ images:Array<Any>,state:MJRefreshState) -> Void{
+        
+    }
+    
+//    MARK: 实现父类的方法
+    override var state: MJRefreshState{
+        set{
+//            检查刷新中动画当前的状态
+            let oldState:MJRefreshState = super.state;
+            if (newValue == oldState){
+                return;
+            }
+//            super.state = newValue;
+////            根据刷新状态执行对应的方法
+//            if(state == MJRefreshState.pulling || state == MJRefreshState.refreshing){
+//                self.gifView?.isHidden = false;
+//                self.lotPlay();
+//            }else{
+//                self.stopAnimating();
+//            }
+            
+        }
+        get{
+            return super.state;
+        }
+    };
+    
 }
