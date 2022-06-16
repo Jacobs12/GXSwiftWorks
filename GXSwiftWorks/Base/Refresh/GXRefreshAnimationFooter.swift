@@ -18,7 +18,21 @@ class GXRefreshAnimationFooter: MJRefreshAutoNormalFooter {
     }
     */
     var _gifView:AnimationView?;
-    var gifView:AnimationView?;
+    var gifView:AnimationView?{
+//        创建AnimationFooter上拉加载动画视图
+        get{
+            if(_gifView == nil){
+                let gifView:AnimationView? = AnimationView.init(name: "Footer");
+                gifView?.contentMode = UIView.ContentMode.scaleAspectFit;
+                gifView?.frame = CGRect.init(x: 0.0, y: 0.0, width: 36.0, height: 36.0);
+                gifView?.center = CGPoint.init(x: UIScreen.main.bounds.size.width / 2.0, y: 22.0);
+                gifView?.loopMode = LottieLoopMode.loop;
+                self.addSubview(gifView!);
+                _gifView = gifView;
+            }
+            return _gifView!;
+        }
+    };
     var _isDraging:Bool?; // 记录是否处于拖动状态
     
     var _stateImages:Dictionary<String,Any>?;
@@ -27,4 +41,11 @@ class GXRefreshAnimationFooter: MJRefreshAutoNormalFooter {
     var _stateDurations:Dictionary<String,Any>?;
     var stateDurations:Dictionary<String,Any>?; // 记录所有状态对应的动画时间
 
+    override func prepare() {
+        super.prepare();
+        _isDraging = false;
+        self.stateLabel?.isHidden = true;
+        self.loadingView?.isHidden = true;
+        self.setTitle("数据加载完毕", for: .noMoreData);
+    }
 }
