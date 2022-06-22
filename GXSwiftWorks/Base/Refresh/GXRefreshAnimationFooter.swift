@@ -7,7 +7,7 @@
 
 import UIKit
 import Lottie
-import MJRefresh
+//import MJRefresh
 
 class GXRefreshAnimationFooter: MJRefreshAutoNormalFooter {
 
@@ -116,7 +116,7 @@ class GXRefreshAnimationFooter: MJRefreshAutoNormalFooter {
     };
     
     override func resetNoMoreData() {
-        _isDraging == false;
+        _isDraging = false;
         super.resetNoMoreData();
     }
     
@@ -126,4 +126,5 @@ class GXRefreshAnimationFooter: MJRefreshAutoNormalFooter {
         super.scrollViewPanStateDidChange(change);
         _isDraging = true;
     }
+    
 }
