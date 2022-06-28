@@ -100,6 +100,7 @@ class GXRefreshAnimationFooter: MJRefreshAutoNormalFooter {
     };
     
     func lotPlay() -> Void{
+        self.loadingView?.isHidden = true;
         if(self.gifView?.isAnimationPlaying == true){
             
         }else{
