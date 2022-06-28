@@ -7,23 +7,17 @@
 
 import UIKit
 
-class GXHomeListViewController: UIViewController {
+class GXHomeListViewController: GXBaseViewViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.createView();
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func createView() ->Void{
+        self.tableView.frame = CGRect.init(x: 0, y: GXDevice.stautsBarHeight()+44.0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height - GXDevice.stautsBarHeight() - GXDevice.)
     }
-    */
 
 }

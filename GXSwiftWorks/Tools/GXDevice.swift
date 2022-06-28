@@ -81,4 +81,15 @@ class GXDevice: NSObject {
         }
         return height;
     }
+    
+//    MARK: 底部区域
+    
+    /// 实现获取底部安全区域高度代码
+    class func bottomSafeAreaHeight() -> CGFloat{
+        let height:CGFloat = 0.0;
+        if(GXDevice.isHaveSafeArea() == true){
+            height = 34.0;
+        }
+        return height;
+    }
 }
