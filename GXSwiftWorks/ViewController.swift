@@ -16,7 +16,7 @@ class ViewController: UIViewController ,UITableViewDataSource,UITableViewDelegat
             if(_dataArray == nil){
                 _dataArray = NSMutableArray.init();
                 let array = [
-                    "闭包","setter和getter","单例数值每次+1，Log输出","类方法","delegate","AFNetworking","web及JS交互"
+                    "闭包","setter和getter","单例数值每次+1，Log输出","类方法","delegate","AFNetworking","web及JS交互","tableView和collectionView"
                 ];
                 _dataArray?.addObjects(from: array);
             }
@@ -100,6 +100,10 @@ class ViewController: UIViewController ,UITableViewDataSource,UITableViewDelegat
             let vc:GXWebViewViewController = GXWebViewViewController.init();
             let url:String = Bundle.main.path(forResource: "js", ofType: "html") ?? "";
             vc.filePath = url;
+            self.navigationController?.pushViewController(vc, animated: true);
+            break;
+        case 7:
+            let vc:GXHomeListViewController = GXHomeListViewController.init();
             self.navigationController?.pushViewController(vc, animated: true);
             break;
         default:
