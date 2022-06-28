@@ -82,6 +82,12 @@ class GXDevice: NSObject {
         return height;
     }
     
+    /// 实现获取顶部导航栏高度计算方法的代码
+    class func navigationBarHeight() -> CGFloat{
+        let height = GXDevice.bottomSafeAreaHeight() + 44.0;
+        return height;
+    }
+    
 //    MARK: 底部区域
     
     /// 实现获取底部安全区域高度代码
@@ -98,4 +104,5 @@ class GXDevice: NSObject {
         let height = 49.0 + GXDevice.bottomSafeAreaHeight();
         return height;
     }
+    
 }
