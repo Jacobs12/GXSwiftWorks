@@ -127,4 +127,18 @@ class GXRefreshAnimationFooter: MJRefreshAutoNormalFooter {
         _isDraging = true;
     }
     
+    override func scrollViewContentOffsetDidChange(_ change: [AnyHashable : Any]?) {
+        super.scrollViewContentOffsetDidChange(change);
+        let scrollView:UIScrollView! = self.scrollView;
+        if(scrollView.contentSize.height < 44.0 || _isDraging == false){
+            return;
+        }
+        let d_y:CGFloat = (scrollView.bounds.size.height + scrollView.contentOffset.y) - scrollView.contentSize.height;
+        if(d_y > 0){
+            if(self.state == MJRefreshState.idle){
+                self.state = MJRefreshState.refreshing;
+            }
+        }
+    }
+    
 }
