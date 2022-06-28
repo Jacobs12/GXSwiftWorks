@@ -42,6 +42,7 @@ class GXRefreshAnimationHeader: MJRefreshStateHeader {
                 _gifView?.contentMode = UIView.ContentMode.scaleAspectFit;
                 _gifView?.center = CGPoint.init(x: UIScreen.main.bounds.size.width / 2.0, y: 32.0);
                 _gifView?.loopMode = LottieLoopMode.loop;
+                self.addSubview(_gifView!);
             }
             return _gifView;
         }
@@ -60,6 +61,12 @@ class GXRefreshAnimationHeader: MJRefreshStateHeader {
         if(image.size.height > self.mj_h){
             self.mj_h = image.size.height;
         }
+    }
+    
+    override func prepare() {
+        super.prepare();
+        self.stateLabel?.isHidden = true;
+        self.lastUpdatedTimeLabel?.isHidden = true;
     }
     
     func set(_ images:Array<Any>, state:MJRefreshState) -> Void{

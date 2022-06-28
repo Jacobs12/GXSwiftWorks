@@ -18,6 +18,7 @@ class GXHomeListViewController: GXBaseViewViewController {
     func createView() ->Void{
         self.tableView.frame = CGRect.init(x: 0, y: GXDevice.navigationBarHeight(), width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height - GXDevice.navigationBarHeight() - GXDevice.bottomSafeAreaHeight());
         self.view.addSubview(self.tableView);
+        self.createTableViewRefreshHeader();
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
