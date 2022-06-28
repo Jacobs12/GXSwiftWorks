@@ -86,10 +86,16 @@ class GXDevice: NSObject {
     
     /// 实现获取底部安全区域高度代码
     class func bottomSafeAreaHeight() -> CGFloat{
-        let height:CGFloat = 0.0;
+        var height:CGFloat = 0.0;
         if(GXDevice.isHaveSafeArea() == true){
             height = 34.0;
         }
+        return height;
+    }
+    
+    /// 实现获取底部tabbar高度计算方法的代码
+    class func tabbarHeight() -> CGFloat{
+        let height = 49.0 + GXDevice.bottomSafeAreaHeight();
         return height;
     }
 }
