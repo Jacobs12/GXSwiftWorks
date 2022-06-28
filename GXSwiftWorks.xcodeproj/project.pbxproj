@@ -14,6 +14,7 @@
 		844198F327E9ACF3004355BF /* GXNetworkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844198F227E9ACF3004355BF /* GXNetworkingViewController.swift */; };
 		844198F927E9AEDC004355BF /* GXProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844198F827E9AEDC004355BF /* GXProtocolViewController.swift */; };
 		844198FB27E9B093004355BF /* GXClassFunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844198FA27E9B093004355BF /* GXClassFunctionViewController.swift */; };
+		84495970286AFE9300B0EFB6 /* GXHomeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449596F286AFE9300B0EFB6 /* GXHomeListViewController.swift */; };
 		84648C7127B3CB060082BE8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84648C7027B3CB060082BE8E /* AppDelegate.swift */; };
 		84648C7527B3CB060082BE8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84648C7427B3CB060082BE8E /* ViewController.swift */; };
 		84648C7827B3CB060082BE8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84648C7627B3CB060082BE8E /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 		844198F227E9ACF3004355BF /* GXNetworkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXNetworkingViewController.swift; sourceTree = "<group>"; };
 		844198F827E9AEDC004355BF /* GXProtocolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXProtocolViewController.swift; sourceTree = "<group>"; };
 		844198FA27E9B093004355BF /* GXClassFunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXClassFunctionViewController.swift; sourceTree = "<group>"; };
+		8449596F286AFE9300B0EFB6 /* GXHomeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXHomeListViewController.swift; sourceTree = "<group>"; };
 		84648C6D27B3CB060082BE8E /* GXSwiftWorks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GXSwiftWorks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84648C7027B3CB060082BE8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84648C7427B3CB060082BE8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				844198F827E9AEDC004355BF /* GXProtocolViewController.swift */,
 				844198F227E9ACF3004355BF /* GXNetworkingViewController.swift */,
 				84962A93280FF77700078B9B /* GXWebViewViewController.swift */,
+				8449596F286AFE9300B0EFB6 /* GXHomeListViewController.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 			files = (
 				844198FB27E9B093004355BF /* GXClassFunctionViewController.swift in Sources */,
 				84B9729328264363003218E6 /* GXBaseViewViewController.swift in Sources */,
+				84495970286AFE9300B0EFB6 /* GXHomeListViewController.swift in Sources */,
 				84B4AC1527BE295300EA6723 /* GXDevice.swift in Sources */,
 				84B4AC0727BDF04600EA6723 /* GXSingleCaseManager.swift in Sources */,
 				84648C7527B3CB060082BE8E /* ViewController.swift in Sources */,
